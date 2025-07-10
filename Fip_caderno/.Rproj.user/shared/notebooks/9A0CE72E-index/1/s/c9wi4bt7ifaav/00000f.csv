@@ -1,0 +1,4 @@
+"0","dados <- read_excel(""dados.xlsx"", sheet = ""sensibilidade_fungicidas"")
+"
+"2","Erro: `path` does not exist: ‘dados.xlsx’
+"
