@@ -1,0 +1,3 @@
+"0","dados2 <- read_excel(""dados.xlsx"","
+"0","                  sheet = ""sensibilidade-fungicida"")"
+"2","New names:"

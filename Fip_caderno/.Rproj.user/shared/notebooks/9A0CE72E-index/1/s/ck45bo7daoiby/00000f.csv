@@ -1,4 +1,9 @@
 "0","attach(dados)"
+"2","Os seguintes objetos são mascarados por dados (pos = 43):
+
+    age, circumference, logcirc, Tree
+
+"
 "0","circumference"
 "1"," [1]"
 "1","  30"
