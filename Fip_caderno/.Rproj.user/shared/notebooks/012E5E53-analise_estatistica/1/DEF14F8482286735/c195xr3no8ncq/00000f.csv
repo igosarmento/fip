@@ -1,0 +1,5 @@
+"0","oidio |> "
+"0","  filter(irrigation_type %in% c(""MS"", ""MS above canopy"", ""Overhead"")) |> "
+"0","  ggplot(aes(time, sev*100)) + "
+"0","  geom_jitter(width = 0.1) +"
+"0","  facet_grid(moisture ~ irrigation_type)"

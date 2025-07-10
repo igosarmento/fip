@@ -1,0 +1,8 @@
+"0","survey |> "
+"0","  filter(residue != ""NA"") |> "
+"0","  count(residue, species) |> "
+"0","  ggplot(aes(residue, n, fill = species)) +"
+"0","  geom_col() +"
+"0","  scale_fill_brewer(palette = ""Greens"") +"
+"0","  theme_minimal() +"
+"0","  labs(x = ""Resíduo"", y = ""Frequência"", fill = ""Espécie"")"

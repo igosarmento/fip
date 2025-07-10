@@ -1,0 +1,4 @@
+"0","#Carregando pacotes"
+"0","library(ggplot2)"
+"0","library(gsheet)"
+"0","library(dplyr)"

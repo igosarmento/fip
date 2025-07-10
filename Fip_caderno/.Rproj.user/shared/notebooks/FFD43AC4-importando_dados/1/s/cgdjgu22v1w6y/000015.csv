@@ -1,0 +1,32 @@
+"0","library(skimr) #warning:false #message:false"
+"2","Registered S3 methods overwritten by 'htmltools':
+  method               from         
+  print.html           tools:rstudio
+  print.shiny.tag      tools:rstudio
+  print.shiny.tag.list tools:rstudio
+"
+"0","skim(dados2)"
+"1","── Data Summary ────────────────────────
+"
+"1","                           Values
+"
+"1","Name                       dados2
+"
+"1","Number of rows             240   
+"
+"1","Number of columns          9     
+"
+"1","_______________________          
+"
+"1","Column type frequency:           
+"
+"1","  character                2     
+"
+"1","  logical                  2     
+"
+"1","  numeric                  5     
+"
+"1","________________________         
+"
+"1","Group variables            None  
+"

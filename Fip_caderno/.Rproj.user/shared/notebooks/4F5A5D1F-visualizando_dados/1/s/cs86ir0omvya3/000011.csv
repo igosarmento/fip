@@ -1,0 +1,4 @@
+"0","dat_mg |>"
+"0","  ggplot(aes(trat, comp, shape = trat, color = trat))+"
+"0","  geom_point(alpha = 1)+"
+"0","  geom_jitter(width = 0.2)"

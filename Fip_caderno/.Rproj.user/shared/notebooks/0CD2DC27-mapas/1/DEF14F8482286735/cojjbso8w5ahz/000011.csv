@@ -1,0 +1,93 @@
+"0",""
+"0",""
+"0","library(rnaturalearth) # Baixar esse pacote"
+"0","library(rnaturalearthhires) # Baixar esse pacote atraves do link abaixo"
+"0",""
+"0","library(terra) # As vezes para gerar o gráfico é necessário baixar esses 2 programas."
+"2","terra 1.8.42
+"
+"2","
+Anexando pacote: ‘terra’
+
+"
+"2","O seguinte objeto é mascarado por ‘package:janitor’:
+
+    crosstab
+
+"
+"2","Os seguintes objetos são mascarados por ‘package:Hmisc’:
+
+    describe, mask, zoom
+
+"
+"2","O seguinte objeto é mascarado por ‘package:MASS’:
+
+    area
+
+"
+"2","O seguinte objeto é mascarado por ‘package:ggpubr’:
+
+    rotate
+
+"
+"2","O seguinte objeto é mascarado por ‘package:patchwork’:
+
+    area
+
+"
+"2","O seguinte objeto é mascarado por ‘package:tidyr’:
+
+    extract
+
+"
+"0","library(sf) # sf = simplificado"
+"2","Linking to GEOS 3.13.0, GDAL 3.10.1, PROJ 9.5.1; sf_use_s2() is TRUE
+"
+"0","remotes::install_github(""ropensci/rnaturalearthhires"") # Pegou link do google"
+"2","Downloading GitHub repo ropensci/rnaturalearthhires@HEAD
+"
+"2","Running `R CMD build`...
+"
+"1","* checking for file 'C:\Users\igo_a\AppData\Local\Temp\Rtmpie9s42\remotes622473cd957\ropensci-rnaturalearthhires-e4736f6/DESCRIPTION' ... OK"
+"1","
+"
+"1","* preparing 'rnaturalearthhires':"
+"1","
+"
+"1","* checking DESCRIPTION meta-information ... OK"
+"1","
+"
+"1","* checking for LF line-endings in source and make files and shell scripts"
+"1","
+"
+"1","* checking for empty or unneeded directories"
+"1","
+"
+"1","* building 'rnaturalearthhires_1.0.0.9000.tar.gz'"
+"1","
+"
+"2","Aviso: o pacote ‘rnaturalearthhires’ está em uso e não será instalado"
+"0","ETH <- ne_states(country = ""Ethiopia"", # Criar data frame com esses dados"
+"0","                 returnclass = ""sf"")"
+"0",""
+"0",""
+"0","library(tidyverse) # Gerar mapas"
+"0","library(ggthemes)"
+"0","library(ggspatial)"
+"0",""
+"0","ETH |> # ETH = state, estado ou provincia"
+"0"," ggplot()+"
+"0","  geom_sf(fill = ""grey90"")+ # Cor do fundo"
+"0","  geom_point(data = cr, aes(lon, lat, color = inc))+"
+"0","  scale_color_viridis_c()+ # Escala de cores com gradiente de intensidade"
+"0","  ##theme_void() # Deixa mapa todo branco, limpo"
+"0","  #theme_map() + # Do pacote ggthemes, mesma função do theme_void"
+"0","  theme_minimal()+ # Olha esse temas no google"
+"0","  theme(legend.position = ""bottom"")+ # Colocar legenda embaixo, a escala de cor da incidência vai ficar abaixo ao invés do lado do mapa"
+"0","  annotation_scale(location = ""tl"")+ # Para adicionar escala"
+"0","  annotation_north_arrow(location = ""br"", which_north = ""true"")+ # Flecha indicando o norte"
+"0","  labs(title = ""Ferrugem do Café na Etiópia"","
+"0","     x = ""Longitude"", y = ""Latitude"","
+"0","     subtitle = ""Levantamento em fazendas"","
+"0","     caption = ""Fonte: Del ponte et al. (2025)"",# Adicionar citação"
+"0","     color = ""Incidência (%)"")"

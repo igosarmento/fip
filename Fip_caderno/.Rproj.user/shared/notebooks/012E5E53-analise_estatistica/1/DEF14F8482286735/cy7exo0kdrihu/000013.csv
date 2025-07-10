@@ -1,0 +1,2 @@
+"0","plot(simulateResiduals(m4))"
+"2","Aviso: DHARMa: fittedModel not in class of supported models. Absolutely no guarantee that this will work!"

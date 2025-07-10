@@ -1,0 +1,6 @@
+"0","library(DHARMa)"
+"0",""
+"0","glm1 <- glm(count ~spray,"
+"0","             data = insects,"
+"0","             family = poisson(link = ""identity""))"
+"0","plot(simulateResiduals(glm1))"

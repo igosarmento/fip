@@ -1,0 +1,2 @@
+"0","library(DT)  #cria uma tabela interativa"
+"0","datatable(cr) #função do pacote DT"

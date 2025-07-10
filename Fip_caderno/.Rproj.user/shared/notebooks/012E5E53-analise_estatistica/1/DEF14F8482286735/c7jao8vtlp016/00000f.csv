@@ -1,0 +1,6 @@
+"0","pcor <- cor(mofo1[, 3:5])"
+"0",""
+"0","library(corrplot)"
+"2","corrplot 0.95 loaded
+"
+"0","corrplot(pcor, method = 'number', type = ""lower"")"

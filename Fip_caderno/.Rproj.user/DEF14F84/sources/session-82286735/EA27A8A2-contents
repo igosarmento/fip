@@ -1,0 +1,163 @@
+---
+title: "importando_dados"
+format: html
+editor: visual
+---
+
+# Importando Dados
+
+## Importar um conjunto de dados que está disponível no R
+
+O R possui diversos conjuntos de dados incorporados que podem ser utilizados para fins de prática, ensino e demonstração de análises estatísticas.
+
+Exemplo para o pacote `Orange`.
+
+`Orange` é um **dataset interno** do R que contém informações sobre o crescimento de árvores de laranja ao longo do tempo.
+
+```{r}
+data("Orange")
+```
+
+Ao conjunto de dados chamado `Orange` está atribuindo um novo objeto chamado `dados`. O operador `<-` está dizendo: "pegue os dados de `Orange` e salve em um objeto chamado `dados`".
+
+```{r}
+dados <- Orange
+dados
+```
+
+Para salvar o conjunto de dados `Orange` em formato de **planilha Excel (.xlsx)** no R, você pode usar o pacote `writexl.`
+
+```{r}
+library(writexl)
+
+write_xlsx(Orange, path = "Orange.xlsx")
+```
+
+## **Dados em formato Excel**
+
+O pacote `readxl` é usado para a importação de planilhas do excel, e permite gerar dataframe de planilhas excel, sendo necessário ser carregado sempre antes de usar. A maioria das funções do `readxl` permite ler dados de planilhas excel, a exemplo de `read_excel`.
+
+O primeiro argumento para `read_excel` é o caminho do arquivo que deve ser lido. O caminho do arquivo e o nome do arquivo (incluindo a extensão do arquivo, .xlsx) precisam ser colocados entre aspas duplas.
+
+```{r}
+library(readxl)
+dados2 <- read_excel("dados.xlsx",
+          sheet = "sensibilidade_fungicidas")
+
+#O argumento sheet = "sensibilidade_fungicidas" indica que você está lendo especificamente a aba (planilha) com esse nome dentro do arquivo Excel.
+
+#Ou dessa forma:
+
+#Pelo nome da aba → "nome_da_aba".
+dados2<- read_excel("dados.xlsx", "sensibilidade_fungicidas")
+#Pela posição da aba → 1, 2, 3, etc.
+dados2 <- read_excel("dados.xlsx", 2)
+
+
+dados2 <- dados2 |>
+
+mutate(dose = as.numeric(dose)) #O código transforma a coluna dose do objeto dados2 em formato numérico e salva essa versão modificada de volta no próprio dados2.
+
+#Isso porque na tabela a coluna dose não está como número.
+
+```
+
+## Dados em planilha google
+
+Para importar dados de planilhas google, usa-se a função `gsheet (read_sheet)`, presente no `pacote gsheet`. A função `read_gsheet` lê o arquivo a partir de uma URL (link da planilha desejada).
+
+```{r}
+library(gsheet)
+
+survey <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit?gid=1118819738#gid=1118819738")
+```
+
+## Usando o argumento text
+
+Uma forma de carregar rapidamente dados no ambiente é por meio do argumento text. Você pode copiar (ctrl + c) os dados de uma planilha e colar (ctrl + v) entre aspas (""), após o argumento text da função `read.table`.
+
+Exemplo: dados \<- read.table(h=T, text=" ")
+
+## Para salvar do R para arquivo Excel ou csv
+
+```{r}
+library(writexl)
+# write_xlsx() #Excel
+# write_csv() #Csv
+```
+
+## Para verificar o conjunto de dados
+
+Para verificar se os dados estão corretos, pode-se utilizar a função `str` ou `glimpse`.
+
+A função `str()` em R é usada para resumir a estrutura de um objeto. Ela mostra rapidamente o tipo, tamanho e os componentes de objetos como data frames, listas ou vetores. É muito útil na exploração inicial dos dados.
+
+A função glimpse mostra do pacote `dplyr`, permite uma visão geral compacta do conjunto de dados. Ela exibe:
+
+1.  O número de linhas e colunas;
+
+2.  O tipo de dado de cada variável (por exemplo, numérico, caracterer);
+
+3.  Os primeiros valores presentes em cada coluna;
+
+```{r}
+str(dados2) 
+glimpse (dados2)
+```
+
+A função`skim()`, do pacote`skimr`fornece um resumo estatístico mais detalhado. Inclui média, mediana, mínimo, máximo, número de valores ausentes (NA).
+
+```{r}
+library(skimr) #warning:false #message:false
+skim(dados2)
+```
+
+A função`names()`é empregada para listar os nomes reais das colunas do dataframe, permitindo identificar com clareza as variáveis disponíveis para análise.
+
+```{r}
+names(dados2)
+```
+
+## Trabalhando com os dados importados:
+
+**Exemplos:**
+
+```{r}
+library(gsheet)
+survey <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit?gid=1118819738#gid=1118819738")
+
+survey |>
+  group_by(state,residue) |>   # agrupar dentro dessa planilha
+  count()
+
+RS <- survey |>  # Para criar uma planilha de um subconjunto
+  filter(state == 'RS') # Filter é para selecionar linhas
+PR <- survey |>
+  filter(state == 'PR')
+
+
+combinado <- rbind(RS,PR) # Combinar os dois conjuntos, um embaixo do outro
+
+```
+
+```{r}
+survey_b <- survey |>
+ dplyr::select(year, state, species) # Para selecionar colunas de um arquivo. Usar os dois pontos para chamar o pacote dplyr sem carrega-lo.
+
+survey_b |>
+  group_by(year,species) |> 
+  count() |>
+  ggplot(aes(year, n, fill = species))+ # fill é o preenchimento
+  geom_col()+
+  scale_fill_manual(values = c("red", "blue")) #fazer escolha de cor manual
+ggsave("espécies.png") #para salvar a imagem
+
+survey_b |>
+  group_by(year,species) |> 
+  count() |>
+  ggplot(aes(year, n, fill = species))+ #fill é o preenchimento, se colocar color depois do fill vai adicionar cor no controno das barras dos gráficos
+  geom_col()+
+  scale_fill_viridis_d()
+```
+
+![](espécies.png)

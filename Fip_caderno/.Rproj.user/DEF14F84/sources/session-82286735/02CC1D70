@@ -1,0 +1,32 @@
+{
+    "id": "02CC1D70",
+    "path": "~/GitHub/fip/Fip_caderno/visualizando_dados.qmd",
+    "project_path": "visualizando_dados.qmd",
+    "type": "quarto_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1752114414663.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "tempName": "Untitled4",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "cursorPosition": "96,0",
+        "scrollLine": "261",
+        "rmdVisualModeLocation": "4775:3764.800048828125"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1752115883,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1752115884134,
+    "read_only": false,
+    "read_only_alternatives": []
+}

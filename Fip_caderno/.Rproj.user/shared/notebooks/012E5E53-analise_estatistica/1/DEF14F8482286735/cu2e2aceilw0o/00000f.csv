@@ -1,0 +1,6 @@
+"0","oidio3 |> "
+"0","  filter(irrigation_type %in% c(""MS"", ""MS above canopy"", ""Overhead"")) |>"
+"0","  ggplot(aes(irrigation_type, AUDPC, color = moisture)) +"
+"0","  geom_point(width = 0.1) +"
+"0","  scale_y_continuous(limits = c(0, 20))"
+"2","Aviso: [38;5;252mIgnoring unknown parameters: `width`[39m"

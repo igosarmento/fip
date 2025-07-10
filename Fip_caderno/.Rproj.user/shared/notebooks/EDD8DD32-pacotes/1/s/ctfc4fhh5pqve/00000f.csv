@@ -1,0 +1,3 @@
+"0","# Usar a função ggplot do pacote ggplot2 sem carregar o pacote todo"
+"0","ggplot2::ggplot(data = mtcars, aes(x = wt, y = mpg)) + "
+"0","  ggplot2::geom_point()"

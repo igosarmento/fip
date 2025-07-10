@@ -1,0 +1,5 @@
+"0","#Primeiramente, carregou-se a biblioteca com o comando:"
+"0","library(gsheet)"
+"0",""
+"0","#Em seguida, os dados foram lidos a partir do link da planilha online usando a função gsheet2tbl, que converte a planilha em um data frame no R:"
+"0","dat_mg <- gsheet2tbl(""https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit?gid=983033137#gid=983033137"")"

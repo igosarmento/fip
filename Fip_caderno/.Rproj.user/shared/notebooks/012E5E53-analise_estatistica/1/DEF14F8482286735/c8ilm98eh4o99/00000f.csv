@@ -1,0 +1,5 @@
+"0","mofo |>"
+"0","  ggplot(aes(inc, yld))+"
+"0","  geom_point()+"
+"0","  geom_smooth(se = F, method = ""lm"")+"
+"0","  facet_wrap(~ study)"

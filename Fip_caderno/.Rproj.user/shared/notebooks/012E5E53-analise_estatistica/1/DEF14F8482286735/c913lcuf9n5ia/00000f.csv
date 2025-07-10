@@ -1,0 +1,18 @@
+"0",""
+"0","library(tidyverse)"
+"0","library(readxl)"
+"0","library(ExpDes.pt)"
+"2","
+Anexando pacote: ‘ExpDes.pt’
+
+"
+"2","O seguinte objeto é mascarado por ‘package:MASS’:
+
+    ginv
+
+"
+"2","Os seguintes objetos são mascarados por ‘package:agricolae’:
+
+    lastC, order.group, tapply.stat
+
+"

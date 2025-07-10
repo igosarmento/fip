@@ -1,0 +1,6 @@
+"0","library(ggpubr)"
+"0",""
+"0","p <- ggboxplot("
+"0","  dat_mg, x = ""trat"", y = ""comp"","
+"0","  color = ""trat"", palette = ""jco"")"
+"0","print(p)"

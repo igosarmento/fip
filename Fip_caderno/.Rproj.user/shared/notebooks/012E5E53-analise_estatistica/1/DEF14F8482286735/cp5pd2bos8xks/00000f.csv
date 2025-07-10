@@ -1,0 +1,6 @@
+"0","estande |>"
+"0","  ggplot(aes(trat, nplants))+"
+"0","  geom_point()+"
+"0","  facet_wrap(~ exp)+"
+"0","  ylim(0,max(estande$nplants))+"
+"0","  geom_smooth(se =  F)"

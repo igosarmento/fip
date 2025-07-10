@@ -1,0 +1,8 @@
+"0","FGT152 <- dat2 |>"
+"0","  filter(Code == ""FGT152"")"
+"0",""
+"0","FGT152 |>"
+"0","  ggplot(aes(factor(Dose), GC_mean))+"
+"0","  geom_point()+"
+"0","  geom_line()+"
+"0","  facet_wrap(~ Code)"

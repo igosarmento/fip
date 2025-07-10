@@ -1,0 +1,6 @@
+"0","library(dplyr)"
+"0","library(epifitter)"
+"0",""
+"0","oidio3 <- oidio |>"
+"0","  group_by(irrigation_type, moisture, block) |>"
+"0","  summarise(AUDPC = AUDPC(time, sev), .groups = ""drop"")"

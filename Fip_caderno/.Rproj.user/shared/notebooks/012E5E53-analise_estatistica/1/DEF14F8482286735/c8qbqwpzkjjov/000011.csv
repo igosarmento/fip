@@ -1,0 +1,4 @@
+"0","library(readxl)"
+"0","library(Hmisc)"
+"0","fung_campo <- read_xlsx(""dados.xlsx"", sheet = ""fungicida_campo"")"
+"2","New names:"

@@ -1,0 +1,33 @@
+{
+    "id": "EA27A8A2",
+    "path": "~/GitHub/fip/Fip_caderno/importando_dados.qmd",
+    "project_path": "importando_dados.qmd",
+    "type": "quarto_markdown",
+    "hash": "2185946579",
+    "contents": "",
+    "dirty": true,
+    "created": 1752113804701.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "tempName": "Untitled3",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "cursorPosition": "16,0",
+        "scrollLine": "0",
+        "rmdVisualModeLocation": "456:300.79998779296875",
+        "docOutlineSize": "76"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1752115854,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1752116179291,
+    "read_only": false,
+    "read_only_alternatives": []
+}

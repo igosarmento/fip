@@ -1,0 +1,5 @@
+"0","hist(insects$count2,"
+"0","     col = ""#1A8C8C"","
+"0","     main = ""Histograma de Count2 Transformado"", "
+"0","     xlab = ""Contagem Transformada"""
+"0",")"

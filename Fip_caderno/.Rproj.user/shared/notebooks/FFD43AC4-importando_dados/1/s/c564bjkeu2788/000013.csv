@@ -1,0 +1,6 @@
+"0","survey_b |>"
+"0","  group_by(year,species) |> "
+"0","  count() |>"
+"0","  ggplot(aes(year, n, fill = species))+ #fill é o preenchimento, se colocar color depois do fill vai adicionar cor no controno das barras dos gráficos"
+"0","  geom_col()+"
+"0","  scale_fill_viridis_d()"

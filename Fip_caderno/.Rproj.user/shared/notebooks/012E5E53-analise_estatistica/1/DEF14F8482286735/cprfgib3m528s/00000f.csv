@@ -1,0 +1,2 @@
+"0","fung_campo$TRAT <- factor(fung_campo$TRAT)"
+"0","fung_campo$BLOCO <- factor(fung_campo$BLOCO)"

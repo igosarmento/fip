@@ -1,0 +1,4 @@
+"0","library(tidyverse)"
+"0","library(readxl)"
+"0",""
+"0","fung_vaso <- read_xlsx(""dados.xlsx"", sheet = ""fungicida_vaso"")"

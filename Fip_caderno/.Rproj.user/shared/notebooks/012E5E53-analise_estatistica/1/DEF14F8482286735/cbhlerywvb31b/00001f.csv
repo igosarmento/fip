@@ -1,0 +1,6 @@
+"0","#add p-value manually"
+"0","p + stat_pvalue_manual(test, label = ""p"","
+"0","  y.position = 18)+"
+"0","    ylim(0,20)+"
+"0","  labs(x = ""Tratamento"","
+"0","       y = ""Comprimento (mm)"")"

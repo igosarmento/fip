@@ -1,0 +1,8 @@
+"0","mofo |>"
+"0","  ggplot(aes(treat, inc)) +"
+"0","  facet_wrap(~study) +"
+"0","  geom_point(color = ""#1A8C8C"") +"
+"0","  labs("
+"0","    x = ""Tratamento"","
+"0","    y = ""Incidência"""
+"0","  )"

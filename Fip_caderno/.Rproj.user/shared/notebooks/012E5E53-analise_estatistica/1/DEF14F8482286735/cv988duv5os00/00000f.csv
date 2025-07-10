@@ -1,0 +1,7 @@
+"0","# Gráfico com diferentes linhas de regressão para comparação"
+"0","estande |>"
+"0","  ggplot(aes(trat, nplants, color = factor(exp))) +"
+"0","  geom_point() +"
+"0","  geom_abline(intercept = 69.74, slope = -0.568, linewidth = 2) + # Linha principal"
+"0","  geom_abline(intercept = 43, slope = -0.73, linetype = ""dashed"") + # Linha comparativa"
+"0","  geom_abline(intercept = 96, slope = -0.40, linetype = ""dashed"")   # Outra linha comparativa"

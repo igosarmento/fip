@@ -1,0 +1,39 @@
+"0","# Teste de Levene – mais robusto à violação da normalidade"
+"0","library(car)"
+"2","Carregando pacotes exigidos: carData
+"
+"2","
+Anexando pacote: ‘car’
+
+"
+"2","O seguinte objeto é mascarado por ‘package:dplyr’:
+
+    recode
+
+"
+"2","O seguinte objeto é mascarado por ‘package:purrr’:
+
+    some
+
+"
+"0","leveneTest(tcm ~ especie, data = micelial)"
+"2","Aviso: group coerced to factor."
+"1","Levene's Test for Homogeneity of Variance (center = median)"
+"1","
+"
+"1","     "
+"1"," Df"
+"1"," F value"
+"1"," Pr(>F)"
+"1","
+group"
+"1","  4"
+"1","  1.7563"
+"1"," 0.1693"
+"1","
+     "
+"1"," 25"
+"1","        "
+"1","       "
+"1","
+"

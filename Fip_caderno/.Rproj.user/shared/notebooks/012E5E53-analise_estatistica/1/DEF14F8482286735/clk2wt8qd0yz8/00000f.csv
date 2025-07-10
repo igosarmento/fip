@@ -1,0 +1,3 @@
+"0","# Filtrar dados para o fungo FGT43"
+"0","FGT43 <- fungi_summary |>"
+"0","  filter(code == ""FGT43"")"

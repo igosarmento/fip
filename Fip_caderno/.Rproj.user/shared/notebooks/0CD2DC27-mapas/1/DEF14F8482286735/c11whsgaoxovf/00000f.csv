@@ -1,0 +1,6 @@
+"0","BRA <- ne_states(country = ""Brazil"", "
+"0","                    returnclass = ""sf"")"
+"0","ggplot(BRA) +"
+"0","geom_sf(color = ""white"","
+"0","          fill = ""darkgreen"") +"
+"0","  theme_void()"

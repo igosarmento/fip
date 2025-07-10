@@ -1,0 +1,6 @@
+"0","curve2 |> ggplot(aes(day,mean_severity, color=Irrigation))+"
+"0","  geom_point()+"
+"0","  geom_errorbar(aes(ymin=mean_severity - sd_severity,"
+"0","                    ymax = mean_severity + sd_severity),"
+"0","                width = 0.1)+"
+"0","  geom_line()"

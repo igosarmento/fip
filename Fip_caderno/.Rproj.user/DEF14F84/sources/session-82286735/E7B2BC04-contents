@@ -1,0 +1,103 @@
+---
+title: "mapas"
+---
+
+# **Construindo Mapas no R**
+
+## Exemplo 1: Mapa Ferrugem do Café na Etiópia
+
+O conjunto de dados será o da ferrugem do café na Etiópia que está no arquivo de dados na nuvem.
+
+## **Importa os dados**
+
+Usaremos a função `gsheet2tbl ()` do pacote `[gsheet]` para carregar os dados no ambiente.
+
+```{r}
+library(gsheet)
+cr <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit?gid=1871397229#gid=1871397229")
+```
+
+## **Visualiza os dados**
+
+Usaremos a função `datatable ()` do pacote **`[DT]`**.
+
+```{r}
+library(DT)  #cria uma tabela interativa
+datatable(cr) #função do pacote DT
+```
+
+## **Gráficos**
+
+```{r warning(FALSE)}
+library(tidyverse)
+
+cr |> # Criar um gráfico
+  ggplot(aes(lon, lat)) +
+  geom_point()
+
+
+library(rnaturalearth) # Baixar esse pacote
+library(rnaturalearthhires) # Baixar esse pacote atraves do link abaixo
+
+library(terra) # As vezes para gerar o gráfico é necessário baixar esses 2 programas.
+library(sf) # sf = simplificado
+
+
+remotes::install_github("ropensci/rnaturalearthhires") # Pegou link do google
+
+ETH <- ne_states(country = "Ethiopia", # Criar data frame com esses dados
+                 returnclass = "sf")
+
+
+library(tidyverse) # Gerar mapas
+library(ggthemes)
+library(ggspatial)
+
+ETH |> # ETH = state, estado ou provincia
+ ggplot()+
+  geom_sf(fill = "grey90")+ # Cor do fundo
+  geom_point(data = cr, aes(lon, lat, color = inc))+
+  scale_color_viridis_c()+ # Escala de cores com gradiente de intensidade
+  ##theme_void() # Deixa mapa todo branco, limpo
+  #theme_map() + # Do pacote ggthemes, mesma função do theme_void
+  theme_minimal()+ # Olha esse temas no google
+  theme(legend.position = "bottom")+ # Colocar legenda embaixo, a escala de cor da incidência vai ficar abaixo ao invés do lado do mapa
+  annotation_scale(location = "tl")+ # Para adicionar escala
+  annotation_north_arrow(location = "br", which_north = "true")+ # Flecha indicando o norte
+  labs(title = "Ferrugem do Café na Etiópia",
+     x = "Longitude", y = "Latitude",
+     subtitle = "Levantamento em fazendas",
+     caption = "Fonte: Del ponte et al. (2025)",# Adicionar citação
+     color = "Incidência (%)")
+     ggsave("mapa_etiopia.png", bg = "white") # Para salvar como imagem
+
+# Para salvar como pdf, # ggsave("mapa_etiopia.pdf", bg = "white")
+```
+
+## Exemplo 2: Mapa Brasil
+
+Conjunto de dados: Para plotar o mapa do pais, usa-se a função ne_countries
+
+```{r}
+BRA <- ne_states(country = "Brazil", 
+                    returnclass = "sf")
+ggplot(BRA) +
+geom_sf(color = "white",
+          fill = "darkgreen") +
+  theme_void()
+```
+
+#### Para selecionar um estado:
+
+**Minas Gerais:**
+
+```{r}
+BRA <- ne_states(country = "Brazil", 
+                    returnclass = "sf")
+MG <- BRA |> filter(name_en == "Minas Gerais")
+ggplot(BRA) +
+geom_sf(color = "black",
+          fill = "white") +
+  geom_sf(data = MG, color = "black",
+            fill = "green")
+```

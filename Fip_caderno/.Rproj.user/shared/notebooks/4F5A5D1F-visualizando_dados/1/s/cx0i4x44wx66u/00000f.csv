@@ -1,0 +1,10 @@
+"0","media_mg$trat <- factor(media_mg$trat, levels = unique(media_mg$trat))"
+"0",""
+"0","# Criar gráfico de linhas com pontos"
+"0","ggplot(media_mg, aes(x = trat, y = media_comp, group = 1)) +"
+"0","  geom_line(color = ""steelblue"", size = 1.2) +"
+"0","  geom_point(size = 3, shape = 21, fill = ""white"", color = ""steelblue"") +"
+"0","  labs(x = ""Tratamento"", y = ""Comprimento Médio"") +"
+"0","  theme_minimal()"
+"2","Aviso: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+Please use `linewidth` instead."

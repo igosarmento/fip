@@ -1,0 +1,1 @@
+"0","interaction.plot(fung_vaso$treat, fung_vaso$dose, fung_vaso$severity)"

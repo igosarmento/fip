@@ -1,0 +1,2 @@
+"0","t_results <- t.test(control, Mg2, var.equal = FALSE)"
+"0","# O parâmetro var.equal = FALSE ativa a correção de Welch, que ajusta os graus de liberdade do teste, tornando-o mais robusto quando as variâncias são diferentes."

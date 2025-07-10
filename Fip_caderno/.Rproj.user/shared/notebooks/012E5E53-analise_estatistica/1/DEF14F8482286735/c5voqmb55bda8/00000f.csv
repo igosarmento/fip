@@ -1,0 +1,4 @@
+"0","library(emmeans)"
+"0","m1 <- emmeans (aov1, ~cult | silicio, type = ""response"")"
+"2","NOTE: Results may be misleading due to involvement in interactions
+"

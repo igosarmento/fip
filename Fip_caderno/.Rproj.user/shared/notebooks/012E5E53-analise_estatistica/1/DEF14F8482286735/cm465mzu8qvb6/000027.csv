@@ -1,0 +1,7 @@
+"0","fung_campo |> 
+  mutate(TRAT = factor(TRAT)) |> 
+  ggplot(aes(TRAT, PROD)) +
+  geom_jitter(width = 0.2) +
+  stat_summary(fun.data = ""mean_cl_boot"", colour = ""red"", width = 0.3)
+"
+"2","Aviso: [38;5;252mIgnoring unknown parameters: `width`[39m"

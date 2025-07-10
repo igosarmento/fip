@@ -1,0 +1,4 @@
+"0","pcor <- cor(mofo1[, 3:5], method = ""spearman"")"
+"0",""
+"0","library(corrplot)"
+"0","corrplot(pcor, method = 'number', type = ""lower"")"

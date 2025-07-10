@@ -1,0 +1,97 @@
+"0","library(drc)"
+"2","
+'drc' has been loaded.
+
+"
+"2","Please cite R and 'drc' if used for a publication,
+"
+"2","for references type 'citation()' and 'citation('drc')'.
+
+"
+"2","
+Anexando pacote: ‘drc’
+
+"
+"2","Os seguintes objetos são mascarados por ‘package:stats’:
+
+    gaussian, getInitial
+
+"
+"0","# Ajustar modelo Weibull 2.3"
+"0","m_wb <- drm(germination ~ dose,"
+"0","            data = FGT43,"
+"0","            fct = W2.3())"
+"2","Aviso: NaNs produzidos"
+"2","Aviso: NaNs produzidos"
+"2","Aviso: NaNs produzidos"
+"0","# Ajustar modelo log-logístico 3 parâmetros (LL.3)"
+"0","m_ll3 <- drm(germination ~ dose,"
+"0","             data = FGT43,"
+"0","             fct = LL.3())"
+"0",""
+"0","# Comparar AIC para escolher o melhor modelo"
+"0","AIC(m_wb)"
+"1","[1]"
+"1"," 32.34994"
+"1","
+"
+"0","AIC(m_ll3)"
+"1","[1]"
+"1"," 26.7762"
+"1","
+"
+"0","# Resumo do melhor modelo (exemplo: LL.3)"
+"0","summary(m_ll3)"
+"1","
+"
+"1","Model fitted: Log-logistic (ED50 as parameter) with lower limit at 0 (3 parms)
+"
+"1","
+"
+"1","Parameter estimates:
+
+"
+"1","             "
+"1","  Estimate"
+"1"," Std. Error"
+"1"," t-value"
+"1","   p-value"
+"1","    "
+"1","
+b:(Intercept)"
+"1","  1.219692"
+"1","   0.175081"
+"1","  6.9664"
+"1","  0.006069"
+"1"," ** "
+"1","
+d:(Intercept)"
+"1"," 48.486911"
+"1","   1.456007"
+"1"," 33.3013"
+"1"," 5.952e-05"
+"1"," ***"
+"1","
+e:(Intercept)"
+"1","  0.495895"
+"1","   0.060851"
+"1","  8.1494"
+"1","  0.003864"
+"1"," ** "
+"1","
+"
+"1","---
+Signif. codes:  "
+"1",""
+"1","0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1"
+"1","
+"
+"1","
+Residual standard error"
+"1",":
+
+"
+"1"," 1.636105 (3 degrees of freedom)
+"
+"0","# Plotar ajuste do modelo LL.3"
+"0","plot(m_ll3, main = ""Ajuste do modelo LL.3 para FGT43"")"

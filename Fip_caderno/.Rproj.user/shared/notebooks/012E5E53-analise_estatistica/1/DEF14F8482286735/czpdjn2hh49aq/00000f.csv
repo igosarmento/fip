@@ -1,0 +1,7 @@
+"0",""
+"0","# Histograma da distribuição dos valores EC50"
+"0","df_ec50 |>"
+"0","  ggplot(aes(x = Estimate)) +"
+"0","  geom_histogram(bins = 5, color = ""black"", fill = ""steelblue"") +"
+"0","  labs(title = ""Distribuição dos valores EC50 estimados"", x = ""EC50"", y = ""Frequência"") +"
+"0","  theme_minimal()"

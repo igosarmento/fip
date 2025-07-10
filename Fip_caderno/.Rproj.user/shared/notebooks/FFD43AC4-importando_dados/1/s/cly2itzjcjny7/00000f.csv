@@ -1,0 +1,6 @@
+"0","library(gsheet)"
+"0","survey <- gsheet2tbl(""https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit?gid=1118819738#gid=1118819738"")"
+"0",""
+"0","survey |>"
+"0","  group_by(state,residue) |>   # agrupar dentro dessa planilha"
+"0","  count()"

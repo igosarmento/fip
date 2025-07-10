@@ -1,0 +1,3 @@
+"0","library(readxl)"
+"0","micelial <- read_excel(""dados.xlsx"", ""micelial"")"
+"0","head(micelial)"

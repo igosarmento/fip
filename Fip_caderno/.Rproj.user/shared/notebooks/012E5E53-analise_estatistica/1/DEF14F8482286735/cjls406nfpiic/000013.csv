@@ -1,0 +1,3 @@
+"0","insects <- InsectSprays"
+"0",""
+"0","b <- boxcox(lm(insects$count+0.1 ~1))"

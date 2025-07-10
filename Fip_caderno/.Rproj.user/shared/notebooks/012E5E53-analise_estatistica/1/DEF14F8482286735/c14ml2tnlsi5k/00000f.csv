@@ -1,0 +1,4 @@
+"0","fung_vaso |> "
+"0","  ggplot(aes(factor(dose), severity*100))+ #transformando dose em um fator e ##transformar para percentual *100"
+"0","  geom_jitter(width = 0.1)+"
+"0","  facet_wrap(~ treat)"
