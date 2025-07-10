@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Igo Sarmento da Silva">
 
-<title>Introdução – CADERNO DE AULAS</title>
+<title>Introdução – FIP_606</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,10 +70,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -100,14 +103,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -115,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">CADERNO DE AULAS</span>
+    <span class="navbar-title">FIP_606</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -125,19 +126,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> <i class="bi bi-id-badge" role="img">
+</i> 
+<span class="menu-text">Sobre</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-básico-do-r" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-book" role="img">
+</i> 
+ <span class="menu-text">Básico do R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-básico-do-r">    
+        <li>
+    <a class="dropdown-item" href="./introducao.html">
+ <span class="dropdown-text">Introdução</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./pacotes.html">
+ <span class="dropdown-text">Pacotes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./importando_dados.html">
+ <span class="dropdown-text">Importando Dados</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./visualizando_dados.html"> <i class="bi bi-graph-down" role="img">
+</i> 
+<span class="menu-text">Gráficos em R Studio</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-análises-estatísticas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-bar-chart" role="img">
+</i> 
+ <span class="menu-text">Análises Estatísticas</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-análises-estatísticas">    
+        <li>
+    <a class="dropdown-item" href="./analise_estatistica.html">
+ <span class="dropdown-text">analise_estatistica</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./mapas.html"> <i class="bi bi-geo-alt" role="img">
+</i> 
+<span class="menu-text">Elaborando Mapas</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+  <li class="nav-item">
     <a class="nav-link" href="https://github.com/igosarmento"> <i class="bi bi-github" role="img">
 </i> 
-<span class="menu-text"></span></a>
+<span class="menu-text">Igo Sarmento</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -146,19 +193,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introdução-ao-r---análise-de-dados" id="toc-introdução-ao-r---análise-de-dados" class="nav-link active" data-scroll-target="#introdução-ao-r---análise-de-dados">Introdução ao R - Análise de Dados</a>
+  <ul class="collapse">
+  <li><a href="#explorando-o-universo-do-r-e-do-rstudio" id="toc-explorando-o-universo-do-r-e-do-rstudio" class="nav-link" data-scroll-target="#explorando-o-universo-do-r-e-do-rstudio">Explorando o universo do R e do RStudio®</a></li>
+  <li><a href="#instalação-do-r-e-do-rstudio" id="toc-instalação-do-r-e-do-rstudio" class="nav-link" data-scroll-target="#instalação-do-r-e-do-rstudio">Instalação do R e do RStudio</a></li>
+  <li><a href="#entendendo-objetos-e-funções" id="toc-entendendo-objetos-e-funções" class="nav-link" data-scroll-target="#entendendo-objetos-e-funções">Entendendo Objetos e Funções</a></li>
+  <li><a href="#classes-de-dados" id="toc-classes-de-dados" class="nav-link" data-scroll-target="#classes-de-dados">Classes de Dados</a></li>
+  <li><a href="#criando-vetores" id="toc-criando-vetores" class="nav-link" data-scroll-target="#criando-vetores">Criando Vetores</a></li>
+  <li><a href="#trabalhando-com-valores-ausentes-na" id="toc-trabalhando-com-valores-ausentes-na" class="nav-link" data-scroll-target="#trabalhando-com-valores-ausentes-na">Trabalhando com Valores Ausentes (NA)</a></li>
+  <li><a href="#o-operador-pipe" id="toc-o-operador-pipe" class="nav-link" data-scroll-target="#o-operador-pipe">O operador pipe</a></li>
+  <li><a href="#comentários-no-código" id="toc-comentários-no-código" class="nav-link" data-scroll-target="#comentários-no-código">Comentários no Código</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introdução</h1>
+<div class="quarto-title-block"><div><h1 class="title">Introdução</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Igo Sarmento da Silva </p>
+          </div>
+  </div>
     
   
     
@@ -170,51 +241,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <section id="introdução-ao-r---análise-de-dados" class="level1">
-<h1><strong>Introdução ao R - Análise de Dados</strong></h1>
-<section id="introdução-ao-r-e-ao-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="introdução-ao-r-e-ao-rstudio"><strong>Introdução ao R e ao RStudio®</strong></h2>
-<p>O <strong>R</strong> é uma linguagem de programação voltada para estatística, ciência de dados e análise gráfica. Gratuito e de código aberto, o R oferece uma ampla gama de recursos para manipulação, visualização e modelagem de dados, sendo amplamente utilizado por estatísticos, pesquisadores e cientistas de dados.</p>
-<p>O <strong>RStudio</strong> é um ambiente de desenvolvimento integrado (IDE) criado especificamente para facilitar o uso do R. Ele oferece uma interface gráfica organizada, com painéis dedicados ao código, visualização de resultados, gráficos e gerenciamento de arquivos, tornando o processo de análise de dados muito mais prático e eficiente. O RStudio é atualizado algumas vezes por ano e notifica automaticamente o usuário quando uma nova versão é lançada, eliminando a necessidade de verificação manual.</p>
-<p>No RStudio, é possível:</p>
+<h1>Introdução ao R - Análise de Dados</h1>
+<section id="explorando-o-universo-do-r-e-do-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="explorando-o-universo-do-r-e-do-rstudio">Explorando o universo do R e do RStudio®</h3>
+<p>O <strong>R</strong> é uma linguagem de programação criada com foco em análise estatística, ciência de dados e visualização gráfica. Por ser open source e gratuito, ganhou grande espaço entre pesquisadores, analistas e profissionais que lidam com dados, oferecendo um ecossistema robusto de pacotes para diferentes tipos de análise e modelagem.</p>
+<p>O <strong>RStudio</strong>, por sua vez, é um ambiente gráfico que torna o uso do R mais acessível e organizado. Ele integra, em uma só interface, áreas para digitação de código, visualização de gráficos, saída de resultados, além do gerenciamento de arquivos, pacotes e variáveis. As atualizações são automáticas e o próprio sistema sugere novas versões sempre que disponíveis.</p>
+<p>Com o RStudio, você pode:</p>
 <ul>
-<li><p>Escrever e testar scripts em R com organização e clareza;</p></li>
-<li><p>Criar gráficos detalhados e interativos;</p></li>
-<li><p>Desenvolver relatórios dinâmicos com R Markdown;</p></li>
-<li><p>Construir aplicações web com o pacote Shiny;</p></li>
-<li><p>Gerenciar pacotes, projetos e conjuntos de dados com facilidade.</p></li>
+<li><p>Escrever scripts de maneira estruturada;</p></li>
+<li><p>Produzir visualizações de dados sofisticadas;</p></li>
+<li><p>Elaborar relatórios dinâmicos utilizando R Markdown;</p></li>
+<li><p>Criar aplicações interativas com o Shiny;</p></li>
+<li><p>Controlar pacotes e projetos com facilidade.</p></li>
 </ul>
-<p>Ao iniciar sua trajetória no universo da análise de dados com o RStudio, é fundamental compreender os primeiros passos e saber onde buscar orientação. Há uma variedade de materiais ricos em conteúdo e extremamente úteis disponíveis, e saber utilizá-los de forma estratégica pode fazer toda a diferença no aprendizado.</p>
-<p>Entre as principais referências, destaca-se o livro <a href="https://r4ds.hadley.nz/"><em>Introdução à Ciência de Dados com R</em>.</a> Obras como essa são valiosas para quem deseja adquirir uma base sólida na ciência de dados e aprofundar-se nas técnicas de exploração e análise utilizando o R.</p>
-<p>Com esse entendimento inicial, damos início à nossa jornada no R, começando pelos seus elementos mais básicos, como instalar o R e o RStudio, objetos e funções que servirão de alicerce para análises mais avançadas no futuro.</p>
+<p>Iniciar-se no R exige familiaridade com conceitos básicos e uma boa curadoria de materiais de apoio. Felizmente, há uma ampla oferta de conteúdos de qualidade, tanto gratuitos quanto pagos, que podem acelerar o processo de aprendizado.</p>
+<p>Um dos recursos recomendados é o livro <em>Introdução à Ciência de Dados com R</em>, que aborda desde conceitos iniciais até técnicas mais avançadas de manipulação e análise de dados.</p>
+<p>Agora que você conhece o cenário, vamos começar pelos fundamentos: como instalar os programas, criar objetos e aplicar funções — blocos essenciais para qualquer análise mais avançada no R.</p>
 </section>
-<section id="baixar-r-studio" class="level2">
-<h2 class="anchored" data-anchor-id="baixar-r-studio"><strong>Baixar R Studio:</strong></h2>
-<p><img src="R.webp" class="img-fluid"></p>
-<p>Link para instalação do <a href="https://posit.co/download/rstudio-desktop/">R e do R Studio</a>.</p>
+<section id="instalação-do-r-e-do-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="instalação-do-r-e-do-rstudio">Instalação do R e do RStudio</h3>
+<p>Para começar a trabalhar com a linguagem, é necessário instalar tanto o R quanto o RStudio. Ambos estão disponíveis gratuitamente:</p>
+<ul>
+<li><p>Download do R</p></li>
+<li><p>Download do RStudio</p></li>
+</ul>
 </section>
-<section id="objetos-e-funções" class="level2">
-<h2 class="anchored" data-anchor-id="objetos-e-funções"><strong>Objetos e funções:</strong></h2>
-<p><strong>Objeto:</strong> Em R, um objeto é uma estrutura que armazena um valor ou conjunto de informações. Para criá-lo, utiliza-se o operador de atribuição <code>&lt;-</code>. Por exemplo: <code>a &lt;- 1</code> cria um objeto chamado <code>a</code> que contém o valor 1. Bases de dados em R geralmente são armazenadas em objetos do tipo <em>data frame</em>, que organizam os dados em formato de tabela (linhas e colunas). Quando executamos uma função, ela realiza o conjunto de instruções programadas e retorna um resultado. As informações fornecidas para uma função são chamadas de argumentos e devem ser colocadas entre parênteses, logo após o nome da função. Caso haja mais de um argumento, eles são separados por vírgulas.</p>
-<p><strong>Classes:</strong> Para trabalhar com textos, colocamos os caracteres entre aspas (” “). Isso é importante porque o R precisa distinguir entre nomes usados no código (como funções, objetos ou pacotes) e textos (letras e palavras).</p>
-<p><strong>Vetores:</strong> São estruturas que armazenam uma sequência ordenada de elementos. Para criar um vetor, utilizamos a função <code>c()</code> e inserimos os valores desejados separados por vírgulas.</p>
-<p>Exemplo: <code>vetor1 &lt;- c(1, 2, 3, 20, 50)</code> cria um vetor com cinco números.</p>
-<p>Uma forma prática de gerar vetores com valores em sequência é usando o operador <code>:</code>. Por exemplo, <code>1:5</code> cria um vetor com os números de 1 a 5.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>vetor1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">20</span>, <span class="dv">50</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1 2 3 4 5</code></pre>
-</div>
-</div>
-<p><strong>Valores especiais – NA:</strong> É utilizado para indicar que determinada informação está ausente. Isso significa que a variável existe, mas seu conteúdo é desconhecido.</p>
-<p>Em termos estatísticos, o <code>NA</code> representa um dado faltante ou omitido. Uma situação comum em análises, quando nem todos os dados estão disponíveis ou foram registrados.</p>
-<p><strong>Operador pipe:</strong> (<code>%&gt;%</code> ou <code>|&gt;</code>) tem como objetivo facilitar a leitura e a construção de sequências de comandos no R. Ele funciona passando o resultado de uma expressão para a próxima função, como se fosse o primeiro argumento dessa nova função.</p>
+<section id="entendendo-objetos-e-funções" class="level3">
+<h3 class="anchored" data-anchor-id="entendendo-objetos-e-funções">Entendendo Objetos e Funções</h3>
+<p>No R, <strong>objetos</strong> funcionam como recipientes que armazenam informações — números, textos, tabelas, entre outros tipos. A criação de um objeto é feita com o operador <code>&lt;-</code>. Por exemplo:</p>
+<pre><code>r</code></pre>
+<p>CopiarEditar</p>
+<p><code>a &lt;- 1</code></p>
+<p>Aqui, o objeto <code>a</code> está armazenando o valor <code>1</code>. Dados tabulares, por exemplo, geralmente são salvos em objetos do tipo <code>data frame</code>, ideais para organizar colunas e linhas.</p>
+<p><strong>Funções</strong> são instruções que realizam tarefas específicas. Elas são acionadas pelo nome, seguido por parênteses contendo os <strong>argumentos</strong> necessários. Se houver mais de um argumento, eles devem ser separados por vírgulas.</p>
 </section>
-<section id="comentários" class="level2">
-<h2 class="anchored" data-anchor-id="comentários">Comentários</h2>
-<p>O R ignorará qualquer texto depois <code>#</code>dessa linha. Isso permite que você escreva comentários, textos que são ignorados pelo R, mas lidos por outras pessoas. Os comentários podem ser úteis para descrever brevemente o que o código a seguir faz.</p>
+<section id="classes-de-dados" class="level3">
+<h3 class="anchored" data-anchor-id="classes-de-dados">Classes de Dados</h3>
+<p>Para representar <strong>textos</strong>, utilizamos aspas. Isso indica ao R que o conteúdo é uma sequência de caracteres e não um comando. Por exemplo:</p>
+<pre><code>r</code></pre>
+<p>CopiarEditar</p>
+<p><code>nome &lt;- "Fitopatologia"</code></p>
+<p>É fundamental para o R saber distinguir nomes de funções e objetos de palavras comuns.</p>
+</section>
+<section id="criando-vetores" class="level3">
+<h3 class="anchored" data-anchor-id="criando-vetores">Criando Vetores</h3>
+<p><strong>Vetores</strong> são conjuntos de dados organizados em sequência. Para construir um vetor, usamos a função <code>c()</code>:</p>
+<pre><code>r</code></pre>
+<p>CopiarEditar</p>
+<p><code>vetor1 &lt;- c(1, 2, 3, 20, 50)</code></p>
+<p>Outra forma rápida de gerar uma sequência numérica é com o operador <code>:</code>:</p>
+<pre><code>r</code></pre>
+<p>CopiarEditar</p>
+<p><code>1:5</code></p>
+<p>Esse comando cria um vetor contendo os números de 1 a 5.</p>
+</section>
+<section id="trabalhando-com-valores-ausentes-na" class="level3">
+<h3 class="anchored" data-anchor-id="trabalhando-com-valores-ausentes-na">Trabalhando com Valores Ausentes (NA)</h3>
+<p>No R, <code>NA</code> é o símbolo utilizado para representar um valor <strong>desconhecido ou não registrado</strong>. Em análises estatísticas, esse tipo de valor aparece com frequência e precisa ser tratado com atenção para não comprometer os resultados.</p>
+</section>
+<section id="o-operador-pipe" class="level3">
+<h3 class="anchored" data-anchor-id="o-operador-pipe">O operador pipe</h3>
+<p>Os pipes (<code>%&gt;%</code> ou <code>|&gt;</code>) são uma forma elegante de encadear funções. Eles pegam o resultado de uma operação e o enviam diretamente para a próxima função, como se fosse o seu primeiro argumento. Isso torna o código mais legível e fluido.</p>
+</section>
+<section id="comentários-no-código" class="level3">
+<h3 class="anchored" data-anchor-id="comentários-no-código">Comentários no Código</h3>
+<p>O caractere <code>#</code> permite adicionar <strong>comentários</strong> no código. Tudo que vier após esse símbolo será ignorado pelo R, servindo apenas como anotação para o programador ou outras pessoas que lerem o script.</p>
+<pre><code>r</code></pre>
+<p>CopiarEditar</p>
+<p><code># Criando um vetor numérico simples vetor1 &lt;- c(1, 2, 3, 20, 50)</code></p>
 
+
+<!-- -->
 
 </section>
 </section>
@@ -240,6 +337,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -309,6 +550,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -639,9 +931,122 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="an">title:</span><span class="co"> "Introdução"</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="co">---</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="fu"># Introdução ao R - Análise de Dados</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="fu">### Explorando o universo do R e do RStudio®</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a></span>
+<span id="cb6-11"><a href="#cb6-11"></a>O **R** é uma linguagem de programação criada com foco em análise estatística, ciência de dados e visualização gráfica. Por ser open source e gratuito, ganhou grande espaço entre pesquisadores, analistas e profissionais que lidam com dados, oferecendo um ecossistema robusto de pacotes para diferentes tipos de análise e modelagem.</span>
+<span id="cb6-12"><a href="#cb6-12"></a></span>
+<span id="cb6-13"><a href="#cb6-13"></a>O **RStudio**, por sua vez, é um ambiente gráfico que torna o uso do R mais acessível e organizado. Ele integra, em uma só interface, áreas para digitação de código, visualização de gráficos, saída de resultados, além do gerenciamento de arquivos, pacotes e variáveis. As atualizações são automáticas e o próprio sistema sugere novas versões sempre que disponíveis.</span>
+<span id="cb6-14"><a href="#cb6-14"></a></span>
+<span id="cb6-15"><a href="#cb6-15"></a>Com o RStudio, você pode:</span>
+<span id="cb6-16"><a href="#cb6-16"></a></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="ss">-    </span>Escrever scripts de maneira estruturada;</span>
+<span id="cb6-18"><a href="#cb6-18"></a></span>
+<span id="cb6-19"><a href="#cb6-19"></a><span class="ss">-    </span>Produzir visualizações de dados sofisticadas;</span>
+<span id="cb6-20"><a href="#cb6-20"></a></span>
+<span id="cb6-21"><a href="#cb6-21"></a><span class="ss">-    </span>Elaborar relatórios dinâmicos utilizando R Markdown;</span>
+<span id="cb6-22"><a href="#cb6-22"></a></span>
+<span id="cb6-23"><a href="#cb6-23"></a><span class="ss">-    </span>Criar aplicações interativas com o Shiny;</span>
+<span id="cb6-24"><a href="#cb6-24"></a></span>
+<span id="cb6-25"><a href="#cb6-25"></a><span class="ss">-    </span>Controlar pacotes e projetos com facilidade.</span>
+<span id="cb6-26"><a href="#cb6-26"></a></span>
+<span id="cb6-27"><a href="#cb6-27"></a>Iniciar-se no R exige familiaridade com conceitos básicos e uma boa curadoria de materiais de apoio. Felizmente, há uma ampla oferta de conteúdos de qualidade, tanto gratuitos quanto pagos, que podem acelerar o processo de aprendizado.</span>
+<span id="cb6-28"><a href="#cb6-28"></a></span>
+<span id="cb6-29"><a href="#cb6-29"></a>Um dos recursos recomendados é o livro *Introdução à Ciência de Dados com R*, que aborda desde conceitos iniciais até técnicas mais avançadas de manipulação e análise de dados.</span>
+<span id="cb6-30"><a href="#cb6-30"></a></span>
+<span id="cb6-31"><a href="#cb6-31"></a>Agora que você conhece o cenário, vamos começar pelos fundamentos: como instalar os programas, criar objetos e aplicar funções — blocos essenciais para qualquer análise mais avançada no R.</span>
+<span id="cb6-32"><a href="#cb6-32"></a></span>
+<span id="cb6-33"><a href="#cb6-33"></a><span class="fu">### Instalação do R e do RStudio</span></span>
+<span id="cb6-34"><a href="#cb6-34"></a></span>
+<span id="cb6-35"><a href="#cb6-35"></a>Para começar a trabalhar com a linguagem, é necessário instalar tanto o R quanto o RStudio. Ambos estão disponíveis gratuitamente:</span>
+<span id="cb6-36"><a href="#cb6-36"></a></span>
+<span id="cb6-37"><a href="#cb6-37"></a><span class="ss">-    </span>Download do R</span>
+<span id="cb6-38"><a href="#cb6-38"></a></span>
+<span id="cb6-39"><a href="#cb6-39"></a><span class="ss">-    </span>Download do RStudio</span>
+<span id="cb6-40"><a href="#cb6-40"></a></span>
+<span id="cb6-41"><a href="#cb6-41"></a><span class="fu">### Entendendo Objetos e Funções</span></span>
+<span id="cb6-42"><a href="#cb6-42"></a></span>
+<span id="cb6-43"><a href="#cb6-43"></a>No R, **objetos** funcionam como recipientes que armazenam informações — números, textos, tabelas, entre outros tipos. A criação de um objeto é feita com o operador <span class="in">`&lt;-`</span>. Por exemplo:</span>
+<span id="cb6-44"><a href="#cb6-44"></a></span>
+<span id="cb6-45"><a href="#cb6-45"></a><span class="in">```         </span></span>
+<span id="cb6-46"><a href="#cb6-46"></a><span class="in">r</span></span>
+<span id="cb6-47"><a href="#cb6-47"></a><span class="in">```</span></span>
+<span id="cb6-48"><a href="#cb6-48"></a></span>
+<span id="cb6-49"><a href="#cb6-49"></a>CopiarEditar</span>
+<span id="cb6-50"><a href="#cb6-50"></a></span>
+<span id="cb6-51"><a href="#cb6-51"></a><span class="in">`a &lt;- 1`</span></span>
+<span id="cb6-52"><a href="#cb6-52"></a></span>
+<span id="cb6-53"><a href="#cb6-53"></a>Aqui, o objeto <span class="in">`a`</span> está armazenando o valor <span class="in">`1`</span>. Dados tabulares, por exemplo, geralmente são salvos em objetos do tipo <span class="in">`data frame`</span>, ideais para organizar colunas e linhas.</span>
+<span id="cb6-54"><a href="#cb6-54"></a></span>
+<span id="cb6-55"><a href="#cb6-55"></a>**Funções** são instruções que realizam tarefas específicas. Elas são acionadas pelo nome, seguido por parênteses contendo os **argumentos** necessários. Se houver mais de um argumento, eles devem ser separados por vírgulas.</span>
+<span id="cb6-56"><a href="#cb6-56"></a></span>
+<span id="cb6-57"><a href="#cb6-57"></a><span class="fu">### Classes de Dados</span></span>
+<span id="cb6-58"><a href="#cb6-58"></a></span>
+<span id="cb6-59"><a href="#cb6-59"></a>Para representar **textos**, utilizamos aspas. Isso indica ao R que o conteúdo é uma sequência de caracteres e não um comando. Por exemplo:</span>
+<span id="cb6-60"><a href="#cb6-60"></a></span>
+<span id="cb6-61"><a href="#cb6-61"></a><span class="in">```         </span></span>
+<span id="cb6-62"><a href="#cb6-62"></a><span class="in">r</span></span>
+<span id="cb6-63"><a href="#cb6-63"></a><span class="in">```</span></span>
+<span id="cb6-64"><a href="#cb6-64"></a></span>
+<span id="cb6-65"><a href="#cb6-65"></a>CopiarEditar</span>
+<span id="cb6-66"><a href="#cb6-66"></a></span>
+<span id="cb6-67"><a href="#cb6-67"></a><span class="in">`nome &lt;- "Fitopatologia"`</span></span>
+<span id="cb6-68"><a href="#cb6-68"></a></span>
+<span id="cb6-69"><a href="#cb6-69"></a>É fundamental para o R saber distinguir nomes de funções e objetos de palavras comuns.</span>
+<span id="cb6-70"><a href="#cb6-70"></a></span>
+<span id="cb6-71"><a href="#cb6-71"></a><span class="fu">### Criando Vetores</span></span>
+<span id="cb6-72"><a href="#cb6-72"></a></span>
+<span id="cb6-73"><a href="#cb6-73"></a>**Vetores** são conjuntos de dados organizados em sequência. Para construir um vetor, usamos a função <span class="in">`c()`</span>:</span>
+<span id="cb6-74"><a href="#cb6-74"></a></span>
+<span id="cb6-75"><a href="#cb6-75"></a><span class="in">```         </span></span>
+<span id="cb6-76"><a href="#cb6-76"></a><span class="in">r</span></span>
+<span id="cb6-77"><a href="#cb6-77"></a><span class="in">```</span></span>
+<span id="cb6-78"><a href="#cb6-78"></a></span>
+<span id="cb6-79"><a href="#cb6-79"></a>CopiarEditar</span>
+<span id="cb6-80"><a href="#cb6-80"></a></span>
+<span id="cb6-81"><a href="#cb6-81"></a><span class="in">`vetor1 &lt;- c(1, 2, 3, 20, 50)`</span></span>
+<span id="cb6-82"><a href="#cb6-82"></a></span>
+<span id="cb6-83"><a href="#cb6-83"></a>Outra forma rápida de gerar uma sequência numérica é com o operador <span class="in">`:`</span>:</span>
+<span id="cb6-84"><a href="#cb6-84"></a></span>
+<span id="cb6-85"><a href="#cb6-85"></a><span class="in">```         </span></span>
+<span id="cb6-86"><a href="#cb6-86"></a><span class="in">r</span></span>
+<span id="cb6-87"><a href="#cb6-87"></a><span class="in">```</span></span>
+<span id="cb6-88"><a href="#cb6-88"></a></span>
+<span id="cb6-89"><a href="#cb6-89"></a>CopiarEditar</span>
+<span id="cb6-90"><a href="#cb6-90"></a></span>
+<span id="cb6-91"><a href="#cb6-91"></a><span class="in">`1:5`</span></span>
+<span id="cb6-92"><a href="#cb6-92"></a></span>
+<span id="cb6-93"><a href="#cb6-93"></a>Esse comando cria um vetor contendo os números de 1 a 5.</span>
+<span id="cb6-94"><a href="#cb6-94"></a></span>
+<span id="cb6-95"><a href="#cb6-95"></a><span class="fu">### Trabalhando com Valores Ausentes (NA)</span></span>
+<span id="cb6-96"><a href="#cb6-96"></a></span>
+<span id="cb6-97"><a href="#cb6-97"></a>No R, <span class="in">`NA`</span> é o símbolo utilizado para representar um valor **desconhecido ou não registrado**. Em análises estatísticas, esse tipo de valor aparece com frequência e precisa ser tratado com atenção para não comprometer os resultados.</span>
+<span id="cb6-98"><a href="#cb6-98"></a></span>
+<span id="cb6-99"><a href="#cb6-99"></a><span class="fu">### O operador pipe</span></span>
+<span id="cb6-100"><a href="#cb6-100"></a></span>
+<span id="cb6-101"><a href="#cb6-101"></a>Os pipes (<span class="in">`%&gt;%`</span> ou <span class="in">`|&gt;`</span>) são uma forma elegante de encadear funções. Eles pegam o resultado de uma operação e o enviam diretamente para a próxima função, como se fosse o seu primeiro argumento. Isso torna o código mais legível e fluido.</span>
+<span id="cb6-102"><a href="#cb6-102"></a></span>
+<span id="cb6-103"><a href="#cb6-103"></a><span class="fu">### Comentários no Código</span></span>
+<span id="cb6-104"><a href="#cb6-104"></a></span>
+<span id="cb6-105"><a href="#cb6-105"></a>O caractere <span class="in">`#`</span> permite adicionar **comentários** no código. Tudo que vier após esse símbolo será ignorado pelo R, servindo apenas como anotação para o programador ou outras pessoas que lerem o script.</span>
+<span id="cb6-106"><a href="#cb6-106"></a></span>
+<span id="cb6-107"><a href="#cb6-107"></a><span class="in">```         </span></span>
+<span id="cb6-108"><a href="#cb6-108"></a><span class="in">r</span></span>
+<span id="cb6-109"><a href="#cb6-109"></a><span class="in">```</span></span>
+<span id="cb6-110"><a href="#cb6-110"></a></span>
+<span id="cb6-111"><a href="#cb6-111"></a>CopiarEditar</span>
+<span id="cb6-112"><a href="#cb6-112"></a></span>
+<span id="cb6-113"><a href="#cb6-113"></a><span class="in">`# Criando um vetor numérico simples vetor1 &lt;- c(1, 2, 3, 20, 50)`</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 
 
 

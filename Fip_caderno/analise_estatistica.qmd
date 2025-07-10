@@ -2,27 +2,27 @@
 title: "analise_estatistica"
 ---
 
-# **Análises estatísticas**
+# Análises estatísticas
 
-## **Tipos de testes para análise estatística:**
+#### Tipos de testes para análise estatística
 
-Nesta aula, serão abordados os tipos de análise estatística em função da quantidade e da natureza das variáveis independentes (níveis dos fatores), bem como do número de tratamentos ou grupos experimentais a serem comparados.
+Nesta aula, serão explorados diferentes tipos de análises estatísticas, considerando a quantidade e a natureza das variáveis independentes (ou níveis dos fatores), assim como o número de tratamentos ou grupos experimentais que serão comparados.
 
-## Teste T
+#### Teste t
 
-O *teste* *t* é um dos testes estatísticos mais utilizados para comparar médias entre grupos. Ele é especialmente útil quando queremos verificar se duas amostras apresentam diferenças estatisticamente significativas. Como todo teste estatístico, o *teste t* também tem como produto a medida do valor de *p* (calculado a probabilidade da diferença encontrada (entre as médias) terem sido por acaso).
+O teste t é um dos métodos estatísticos mais comuns para comparar médias entre grupos. Ele é especialmente indicado quando se deseja avaliar se duas amostras apresentam diferenças estatisticamente significativas. Como em qualquer teste estatístico, o resultado inclui o valor de p, que indica a probabilidade de que a diferença observada entre as médias tenha ocorrido por acaso.
 
-No RStudio, esse teste pode ser realizado de forma simples usando a função `t.test()`.
+No RStudio, o teste t pode ser facilmente aplicado utilizando a função `t.test()`.
 
-Trabalhando um conjunto de dados e aplicando o “Teste t”.
+#### Aplicando o teste t em um conjunto de dados
 
-### Teste t para amostras independentes
+O teste t para amostras independentes verifica se há evidências suficientes para afirmar que as médias de dois grupos são diferentes. Esse teste parte do pressuposto de que os grupos são independentes, ou seja, os dados de um grupo não interferem nos dados do outro.
 
-O teste t para amostras independentes avalia se há evidência estatística suficiente para afirmar que as médias dos dois grupos são diferentes. Esse teste assume que os dois grupos são independentes entre si, isto é, os valores de um grupo não influenciam os do outro.
+#### Exemplo prático
 
-**Exemplo:** Experimento com o objetivo de avaliar o efeito do micronutriente magnésio (Mg), adicionado na solução do solo cultivado com plantas, no manejo de uma doença. O experimento foi conduzido em delineamento inteiramente casualizado com 10 repetições. Um dos tratamentos é o controle "*control*" (testemunha, sem a aplicação do micronutriente. O segundo é Magnésio "*Mg2*", onde houve aplicação do mineral. Em cada uma das repetições foi obtido um valor médio do comprimento (mm) de lesões.
+Um experimento foi realizado para avaliar o efeito do micronutriente magnésio (Mg), adicionado na solução do solo, sobre o controle de uma doença em plantas. O experimento seguiu um delineamento inteiramente casualizado com 10 repetições. Dois tratamentos foram considerados: o controle ("control"), sem aplicação do micronutriente, e o tratamento com magnésio ("Mg2"), onde o mineral foi aplicado. Em cada repetição, foi medido o comprimento médio (em milímetros) das lesões nas plantas.
 
-O conjunto de dados utilizado neste exemplo está disponível em uma planilha online no *Google Sheets*.Para acessar esses dados diretamente no R, foi utilizada a biblioteca `gsheet`, que permite importar planilhas do *Google Sheets* de forma prática.
+Os dados usados neste exemplo estão disponíveis em uma planilha online no Google Sheets. Para importar esses dados diretamente no R, foi utilizado o pacote `gsheet`, que facilita a leitura de planilhas hospedadas no Google Sheets.
 
 ```{r}
 #Primeiramente, carregou-se a biblioteca com o comando:
@@ -32,7 +32,7 @@ library(gsheet)
 dat_mg <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit?gid=983033137#gid=983033137")
 ```
 
-Com os dados carregados, foi feita uma visualização gráfica utilizando a biblioteca `ggplot2`. O gráfico gerado é do tipo *jitter plot*, que ajuda a visualizar a dispersão dos dados ao longo dos diferentes tratamentos (trat) em relação à variável de interesse (comp):
+Após importar os dados, realizou-se uma visualização gráfica utilizando o pacote **ggplot2**. O gráfico produzido foi um **jitter plot**, que auxilia na visualização da distribuição dos pontos de dados para cada tratamento (**trat**) em relação à variável analisada (**comp**). Esse tipo de gráfico é útil para evitar a sobreposição dos pontos e mostrar a dispersão real das observações.
 
 ```{r}
 library(ggplot2)
@@ -41,9 +41,9 @@ dat_mg |>
   geom_jitter(width=0.1)
 ```
 
-Esse tipo de gráfico é útil para observar possíveis padrões, sobreposição de valores e variações entre os grupos experimentais.
+Esse gráfico é ideal para identificar padrões, verificar a presença de valores sobrepostos e analisar as variações entre os diferentes grupos experimentais.
 
-Agora, vamos iniciar a análise dos dados e extrair estatísticas que resumem o conjunto, tanto em relação à tendência central quanto à dispersão.
+A seguir, vamos começar a análise dos dados, extraindo medidas estatísticas que resumem o comportamento geral do conjunto, considerando tanto a tendência central quanto a dispersão dos valores.
 
 ```{r}
 library(dplyr)
@@ -60,7 +60,7 @@ data2
 
 ```
 
-Aqui visualizaremos os dados em gráfico de barras vertical com erro padrão.
+Nesta etapa, os dados serão representados em um gráfico de barras verticais que inclui barras de erro padrão, permitindo visualizar a média e a variabilidade dos grupos de forma clara.
 
 ```{r}
 data2 |> 
@@ -89,11 +89,9 @@ data2 |>
 labs(x = "Tratamentos", y = "Tamanho médio das lesões  (mm)")
 ```
 
-Após importar e visualizar os dados sobre tratamentos com magnésio, procedeu-se com a transformação do formato dos dados e aplicação de um teste estatístico para comparação entre os grupos.
+Depois de importar e visualizar os dados referentes aos tratamentos com magnésio, foi realizada a transformação da estrutura dos dados e aplicada uma análise estatística para comparar os grupos.
 
-#### Transformação dos dados (pivotagem)
-
-Inicialmente, os dados foram reorganizados com a função `pivot_wider()` da biblioteca `tidyr`, com o objetivo de converter a estrutura do dataset do formato longo (onde os valores de tratamento estão em uma única coluna) para o formato largo (em que cada tratamento ocupa uma coluna distinta com seus respectivos valores):
+Para isso, utilizou-se a função **pivot_wider()** do pacote **tidyr**, que reorganiza os dados do formato longo — no qual os tratamentos estão listados em uma única coluna — para o formato largo, onde cada tratamento passa a ser representado por uma coluna separada contendo seus respectivos valores.
 
 ```{r}
 library(dplyr)
@@ -105,9 +103,9 @@ dat_mg2 <- dat_mg |>
   dplyr::select(-rep)
 ```
 
-Com isso, a coluna `trat`, que antes indicava os diferentes grupos de tratamento (por exemplo, "control" e "Mg2"), é desmembrada em colunas separadas, facilitando a aplicação de testes estatísticos comparativos. A coluna `rep`, que representa as repetições experimentais, foi removida por não ser necessária nessa etapa da análise.
+Dessa forma, a coluna **trat**, que anteriormente indicava os grupos de tratamento (como "control" e "Mg2"), foi dividida em colunas separadas para cada grupo, o que facilita a aplicação de testes estatísticos de comparação. A coluna **rep**, referente às repetições do experimento, foi descartada, pois não era necessária para essa etapa da análise.
 
-Utilizou-se a função `t.test()` para comparar as médias dos dois tratamentos: `control` (sem magnésio) e `Mg2` (tratamento com magnésio):
+Em seguida, aplicou-se a função **t.test()** para comparar as médias dos dois tratamentos: o grupo controle (sem aplicação de magnésio) e o grupo Mg2 (com aplicação do magnésio).
 
 ```{r}
 attach(dat_mg2)
@@ -116,38 +114,36 @@ t_results <- t.test(control, Mg2)
 t_results
 ```
 
-#### Interpretação do valor de *p*
+#### Interpretação do valor de p
 
-O resultado do teste inclui o valor de *p* (*p-value*), que representa a probabilidade de observar uma diferença entre as médias tão grande quanto (ou maior que) a encontrada nos dados, assumindo que a hipótese nula seja verdadeira.
+O resultado do teste apresenta o valor de p (p-value), que indica a probabilidade de encontrar uma diferença entre as médias igual ou maior do que a observada, considerando que a hipótese nula seja verdadeira.
 
--   **Hipótese nula (H₀):** as médias dos dois grupos são iguais.
+A hipótese nula (H₀) postula que as médias dos dois grupos são iguais, enquanto a hipótese alternativa (H₁) sugere que as médias são diferentes.
 
-**Hipótese alternativa (H₁):** as médias dos grupos são diferentes
+Quando o valor de p é pequeno, geralmente inferior a 0,05, rejeitamos a hipótese nula. Isso significa que a diferença entre os grupos é estatisticamente significativa, apoiando a hipótese alternativa de que os grupos realmente diferem.
 
-Se o valor de *p* for muito pequeno (geralmente menor que 0,05), rejeita-se a hipótese nula. Isso significa que a diferença observada entre os grupos é estatisticamente significativa, e aceita-se a hipótese alternativa: os grupos são diferentes entre si.
+Assim, o teste t aplicado permite avaliar se a aplicação do magnésio (Mg2) produziu um efeito significativo em comparação ao controle.
 
-Portanto, o teste t aplicado permite concluir se a aplicação de magnésio (Mg2) gerou um efeito significativo em relação ao controle.
+#### Análise e interpretação do teste t com suporte de pacotes no R
 
-#### Análise e Interpretação do Teste t com Apoio de Pacotes no R
+Depois de realizar o teste t para comparar dois tratamentos aplicados em plantas — como o controle e a suplementação com magnésio — foram utilizadas ferramentas adicionais no R para facilitar a interpretação, organização e visualização dos resultados de forma mais intuitiva.
 
-Após a realização do teste t para comparar dois tratamentos experimentais aplicados em plantas (por exemplo, controle e suplementação com magnésio), foram utilizadas ferramentas adicionais no R para interpretar, organizar e visualizar os resultados de forma mais clara e acessível.
-
-O pacote `report` foi utilizado para gerar uma interpretação automática e em linguagem natural dos resultados do teste t. Esse pacote é útil para descrever os principais resultados estatísticos em formato descritivo, ideal para relatórios e publicações.
+O pacote **report** foi empregado para gerar automaticamente uma descrição em linguagem natural dos resultados do teste t. Essa ferramenta é especialmente útil para criar resumos claros e acessíveis, ideais para relatórios e artigos científicos.
 
 ```{r}
 library(report) #Pacote para explicar os resultados das análises
 report(t_results)
 ```
 
-A função `report()` aplica uma análise interpretativa ao objeto do teste t (`t_results`), exibindo informações como estatísticas do teste, valor de *p*, médias dos grupos comparados e interpretação textual (por exemplo, se a diferença entre os grupos é significativa ou não).
+A função **report()** realiza uma análise interpretativa do resultado do teste t armazenado no objeto `t_results`. Ela apresenta informações importantes, como as estatísticas do teste, o valor de p, as médias dos grupos comparados, além de uma descrição textual que indica se a diferença entre os grupos é estatisticamente significativa ou não.
 
-Como o objeto `t_results` foi gerado com os dados em formato longo, **não foi necessário fazer transformações adicionais** para usar a função `report()`.
+Como o objeto `t_results` foi criado a partir dos dados no formato longo, não foi preciso realizar nenhuma transformação adicional para utilizar a função **report()** de forma direta.
 
-#### Realização do teste t com o pacote `rstatix`
+#### Realização do teste t utilizando o pacote rstatix
 
-Outra forma de realizar o teste t, especialmente útil para análises com estrutura de dados em formato longo, é com o pacote `rstatix`. Ele fornece uma sintaxe clara e compatível com o `tidyverse`.
+Uma alternativa eficiente para executar o teste t, especialmente quando se trabalha com dados no formato longo, é usar o pacote **rstatix**. Esse pacote oferece uma sintaxe simples e integrada ao tidyverse, facilitando a análise.
 
-Aqui, `comp ~ trat` indica que estamos comparando a variável de resposta `comp` entre os níveis da variável `trat`. O resultado é armazenado no objeto `test`, que pode ser usado para visualização.
+No comando utilizado, `comp ~ trat` indica que a variável resposta **comp** será comparada entre os diferentes níveis da variável **trat**. O resultado do teste é armazenado no objeto `test`, que pode ser posteriormente utilizado para geração de gráficos ou relatórios.
 
 ```{r}
 library(rstatix)
@@ -157,7 +153,7 @@ test
 
 #### Visualização gráfica com valor de *p* usando `ggpubr`
 
-Para complementar a análise, foi construído um gráfico boxplot com o pacote `ggpubr`, que facilita a geração de gráficos estatísticos com suporte a *p-values*.
+Para enriquecer a análise, foi criado um boxplot utilizando o pacote **ggpubr**, que simplifica a criação de gráficos estatísticos e permite adicionar diretamente os valores de p, facilitando a interpretação visual dos resultados.
 
 ```{r}
 library(ggpubr)
@@ -168,9 +164,7 @@ p <- ggboxplot(
 print(p)
 ```
 
-Em seguida, o valor de *p* obtido no teste t foi adicionado manualmente ao gráfico com `stat_pvalue_manual()`, indicando se há diferença estatística entre os grupos:
-
-O parâmetro `y.position = 18` define a altura em que o valor de *p* será exibido no gráfico. A função `ylim(0, 20)` ajusta os limites do eixo y para acomodar melhor os dados e o texto.
+Em seguida, o valor de p resultante do teste t foi inserido manualmente no gráfico utilizando a função **stat_pvalue_manual()**, que destaca se existe diferença estatisticamente significativa entre os grupos. O argumento `y.position = 18` determina a altura onde o valor de p será exibido, enquanto a função **ylim(0, 20)** ajusta os limites do eixo y para garantir que tanto os dados quanto os textos fiquem bem acomodados na visualização.
 
 ```{r}
 #add p-value manually
@@ -184,27 +178,13 @@ ggsave("plot2.png", bg = "white") #Por fim, o gráfico foi salvo em um arquivo d
 
 ```
 
-#### Verificação de Suposições para o Teste t: Normalidade e Homogeneidade de Variâncias
+#### Verificação das suposições para o teste t: normalidade e homogeneidade de variâncias
 
-Ao aplicar o *teste t* para comparação de médias entre dois grupos independentes, é fundamental verificar se os dados atendem às suposições básicas desse teste paramétrico. Essas suposições incluem:
+Antes de aplicar o teste t para comparar médias entre dois grupos independentes, é essencial confirmar se os dados cumprem as premissas fundamentais desse teste paramétrico. Entre essas premissas estão a normalidade da distribuição dos dados em cada grupo e a igualdade das variâncias entre eles. Caso essas condições não sejam atendidas, os resultados do teste podem ser comprometidos, sendo necessário considerar métodos alternativos ou ajustes.
 
--   **Distribuição normal dos dados em cada grupo**
+Para verificar a normalidade dos dados em cada grupo, utilizou-se o teste de Shapiro-Wilk por meio da função `shapiro.test()`. Esse teste tem como hipótese nula (H₀) que os dados seguem uma distribuição normal. Assim, se o valor de p for maior que 0,05, não há evidências para rejeitar a normalidade, ou seja, os dados podem ser considerados normalmente distribuídos. Por outro lado, um valor de p menor que 0,05 indica que os dados não seguem uma distribuição normal.
 
--   **Homogeneidade das variâncias entre os grupos**
-
-O não atendimento dessas condições pode invalidar os resultados do teste ou exigir ajustes na sua aplicação.
-
-#### Teste de Normalidade: `shapiro.test()`
-
-A normalidade dos dados foi avaliada para cada grupo separadamente com o **teste de Shapiro-Wilk**, por meio da função `shapiro.test()`:
-
-Esse teste verifica se os dados seguem uma **distribuição normal**. A hipótese nula (H₀) é de que os dados são normalmente distribuídos.
-
--   Se o **valor de p \> 0,05**, não se rejeita H₀ → os dados são considerados normalmente distribuídos;
-
--   Se o **valor de p \< 0,05**, rejeita-se H₀ → os dados não seguem distribuição normal.
-
-Além do teste, foram gerados histogramas para visualização da distribuição:
+Além do teste estatístico, histogramas foram elaborados para fornecer uma visualização gráfica da distribuição dos dados em cada grupo.
 
 ```{r}
 #Testando a normalidade dos dados
@@ -215,9 +195,9 @@ hist(Mg2)
 hist(control)
 ```
 
-Os histogramas ajudam a identificar visualmente desvios da normalidade, como assimetrias ou presença de outliers.
+Os histogramas são úteis para identificar visualmente possíveis desvios da normalidade, como assimetrias ou a presença de valores extremos (outliers).
 
-**Análise visual da premissa de normalidade**: A análise visual da premissa de normalidade é realizada por qqplot (QQ-Plot), que permite verificar se uma amostra segue uma distribuição gaussiana. Podemos simplesmente fazer usando as funções qqnorm() e qqline() para cada umas das variáveis analisadas.
+Para uma avaliação visual mais detalhada da normalidade, utiliza-se o **QQ-Plot** (gráfico quantil-quantil), que permite comparar a distribuição da amostra com a distribuição normal teórica. No R, isso pode ser feito facilmente com as funções `qqnorm()` e `qqline()`, aplicadas a cada variável analisada, para observar se os pontos se alinham à linha reta, indicando conformidade com a distribuição normal.
 
 ```{r}
 qqnorm (Mg2)
@@ -229,15 +209,11 @@ qqnorm(control)
 qqline(control)
 ```
 
-#### Teste de Homogeneidade de Variâncias: `var.test()`
+#### Teste de homogeneidade das variâncias: var.test()
 
-Para verificar se as variâncias dos dois grupos são semelhantes (homogêneas), utilizou-se o **teste de F** com a função `var.test()`:
+Para avaliar se as variâncias dos dois grupos são equivalentes, foi aplicado o teste de Fisher, disponível na função `var.test()`. A hipótese nula (H₀) deste teste assume que as variâncias dos grupos são iguais.
 
-A hipótese nula (H₀) nesse teste é de que as variâncias dos dois grupos são iguais.
-
--   Se o **valor de p \> 0,05**, considera-se que as variâncias são homogêneas.
-
--   Se o **valor de p \< 0,05**, as variâncias são diferentes (heterocedásticas).
+Quando o valor de p é maior que 0,05, conclui-se que as variâncias são homogêneas. Por outro lado, se o valor de p for inferior a 0,05, indica-se que as variâncias diferem significativamente, caracterizando heterocedasticidade.
 
 ```{r}
 #Testando a homogeneidade das variâncias
@@ -245,23 +221,22 @@ var.test(dat_mg2$Mg2,
          dat_mg2$control) 
 ```
 
-#### Ajuste do Teste t com base nas variâncias
+#### Ajuste do teste t conforme a homogeneidade das variâncias
 
-Se o teste indicar variâncias homogêneas, pode-se aplicar o teste t com o argumento `var.equal = TRUE` (padrão).\
-No entanto, se for detectada heterogeneidade de variâncias, o teste t deve ser ajustado com:
+Quando o teste aponta para variâncias homogêneas, o teste t pode ser realizado usando o argumento padrão `var.equal = TRUE`. Porém, se for identificada heterocedasticidade — ou seja, variâncias diferentes entre os grupos — é necessário ajustar o teste t para considerar essa condição, alterando o parâmetro para refletir essa diferença.
 
 ```{r}
 t_results <- t.test(control, Mg2, var.equal = FALSE)
 # O parâmetro var.equal = FALSE ativa a correção de Welch, que ajusta os graus de liberdade do teste, tornando-o mais robusto quando as variâncias são diferentes.
 ```
 
-### Teste T para amostras dependentes
+### Teste t para amostras dependentes
 
-**Exemplo:** Foi realizado um experimento com o objetivo de verificar o impacto do uso de uma escala na acurácia e precisão de estimativas visuais de severidade feitas por avaliadores. A hipótese testada foi de que o uso de uma escala diagramática auxilia na obtenção de estimativas mais acuradas em comparação com avaliações feitas sem esse recurso. Dez avaliadores foram selecionados aleatoriamente, e cada um realizou duas avaliações. Foram coletadas cinco variáveis relacionadas à concordância das estimativas. Como as medições foram repetidas para os mesmos avaliadores em momentos distintos, tratam-se de amostras dependentes.
+Um experimento foi conduzido para avaliar o efeito do uso de uma escala diagramática na precisão e acurácia das estimativas visuais de severidade feitas por avaliadores. A hipótese levantada foi que a utilização dessa escala melhora a exatidão das avaliações em comparação com avaliações realizadas sem o auxílio da escala. Dez avaliadores foram selecionados aleatoriamente, e cada um realizou duas avaliações em momentos diferentes. Foram coletadas cinco variáveis relacionadas à concordância das estimativas. Como as medições são repetidas para os mesmos indivíduos, trata-se de amostras dependentes.
 
-#### Comparando Dois Grupos (teste t pareado)
+#### Comparação entre dois grupos (teste t pareado)
 
-Aqui, os dados são importados diretamente de uma planilha online no Google Sheets com o pacote `gsheet`. A planilha contém escores de acurácia medidos antes e depois de uma intervenção (avaliados como `Unaided` e `Aided1`).
+Os dados utilizados foram importados diretamente de uma planilha online do Google Sheets, por meio do pacote **gsheet**. Essa planilha contém escores de acurácia obtidos antes e depois da intervenção, denominados “Unaided” (sem auxílio) e “Aided1” (com auxílio).
 
 ```{r}
 #importação dos dados
@@ -272,9 +247,9 @@ head(escala)
 
 ### Teste t pareado
 
-Esse teste verifica se houve diferença significativa entre os dois momentos de avaliação (antes e depois da ajuda), utilizando o `t_test()` do pacote `rstatix`.
+O teste t pareado é utilizado para determinar se existe uma diferença significativa entre dois momentos de avaliação realizados pelas mesmas pessoas (antes e depois da intervenção). No R, esse teste pode ser aplicado com a função `t_test()` do pacote **rstatix**.
 
-A opção `paired = TRUE` indica que são as mesmas pessoas avaliadas duas vezes, e `var.equal = FALSE` corrige o teste caso as variâncias sejam diferentes (teste de Welch).
+O argumento `paired = TRUE` especifica que as amostras são dependentes, ou seja, as medições são feitas nos mesmos indivíduos em duas ocasiões diferentes. Já o parâmetro `var.equal = FALSE` ajusta o teste para considerar possíveis diferenças nas variâncias, utilizando o método de Welch.
 
 ```{r}
 test <- t_test(acuracia ~ assessment,
@@ -284,7 +259,7 @@ test <- t_test(acuracia ~ assessment,
 test
 ```
 
-**Visualização:** É gerado um boxplot para visualizar a distribuição das acurácias por tipo de avaliação (`Unaided` vs `Aided1`).
+Para facilitar a interpretação dos resultados, é criado um boxplot que mostra a distribuição dos escores de acurácia para cada tipo de avaliação, comparando as condições “Unaided” e “Aided1”.
 
 ```{r}
 escala |> 
@@ -998,8 +973,6 @@ fung_campo <- read_xlsx("dados.xlsx", sheet = "fungicida_campo")
 `stat_summary(fun.data = "mean_cl_boot")`: adiciona médias com intervalos de confiança via bootstrap.
 
 ```{r}
-fung_campo <- fung_campo |> 
-  rename(TRAT = ...1)
 fung_campo |> 
   mutate(TRAT = factor(TRAT)) |> 
   ggplot(aes(TRAT, PROD)) +
