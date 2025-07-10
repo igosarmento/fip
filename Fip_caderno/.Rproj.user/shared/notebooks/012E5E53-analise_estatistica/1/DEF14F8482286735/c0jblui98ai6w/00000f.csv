@@ -1,7 +1,0 @@
-"0","library(dplyr)"
-"0","library(tidyr)  # <- Adicione isso para usar pivot_wider()"
-"0","dat_mg2 <- dat_mg |>"
-"0","  pivot_wider (names_from = trat, values_from = comp) |> #Transformando o formato dos dados: O que era uma coluna ""longa"" vai virar várias colunas ""largas""."
-"0","  ##   Pivot (passar de longo para largo)"
-"0","  "
-"0","  dplyr::select(-rep)"

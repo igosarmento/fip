@@ -1,15 +1,20 @@
 "0","attach(dat_mg2)"
-"2","Os seguintes objetos são mascarados por dat_mg2 (pos = 3):
-
-    control, Mg2
-
-"
 "2","Os seguintes objetos são mascarados por dat_mg2 (pos = 4):
 
     control, Mg2
 
 "
-"2","Os seguintes objetos são mascarados por dat_mg2 (pos = 8):
+"2","Os seguintes objetos são mascarados por dat_mg2 (pos = 5):
+
+    control, Mg2
+
+"
+"2","Os seguintes objetos são mascarados por dat_mg2 (pos = 6):
+
+    control, Mg2
+
+"
+"2","Os seguintes objetos são mascarados por dat_mg2 (pos = 10):
 
     control, Mg2
 

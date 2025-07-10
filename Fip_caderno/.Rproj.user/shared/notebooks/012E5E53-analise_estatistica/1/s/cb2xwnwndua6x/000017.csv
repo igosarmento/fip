@@ -1,4 +1,0 @@
-"0","library(ggplot2)"
-"0","dat_mg |> "
-"0","  ggplot(aes(trat, comp))+"
-"0","  geom_jitter(width=0.1)"

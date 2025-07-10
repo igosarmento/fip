@@ -18,8 +18,6 @@ Exemplo para o pacote `Orange`.
 data("Orange")
 ```
 
-![](Dados%20orange.png)
-
 Ao conjunto de dados chamado `Orange` está atribuindo um novo objeto chamado `dados`. O operador `<-` está dizendo: "pegue os dados de `Orange` e salve em um objeto chamado `dados`".
 
 ```{r}

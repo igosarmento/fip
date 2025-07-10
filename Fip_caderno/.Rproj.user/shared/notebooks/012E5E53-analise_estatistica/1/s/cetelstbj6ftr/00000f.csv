@@ -1,6 +1,0 @@
-"0","insects$count2 <- (insects$count ^ lambda - 1) / lambda"
-"0",""
-"0","hist(insects$count, "
-"0","     col = ""#1A8C8C"",        # cor do histograma"
-"0","     main = ""Histograma de Count Transformado"", "
-"0","     xlab = ""Contagem Transformada"")"

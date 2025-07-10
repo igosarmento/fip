@@ -1,3 +1,0 @@
-"0","library(rstatix)"
-"0","test <- t_test(comp ~ trat, data = dat_mg)"
-"0","test"

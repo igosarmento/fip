@@ -1,5 +1,0 @@
-"0","test <- t_test(acuracia ~ assessment,"
-"0","       data = escala,"
-"0","       paired = TRUE,"
-"0","       var.equal = FALSE)"
-"0","test"

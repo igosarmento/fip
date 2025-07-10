@@ -3,28 +3,54 @@ project:
   output-dir: docs
 
 website:
-  title: "CADERNO DE AULAS"
+  title: "FIP_606"
+
   navbar:
-    background: "#87CEEB"
-    primary: "#B0E0E6"
     left:
-      - text: "Home"
-        href: index.qmd
+      - text: "Sobre"
+        file: index.qmd
+        icon: id-badge
+      - text: "Básico do R"
+        icon: book 
+        menu:
+          - file: introducao.qmd
+            text: "Introdução"
+          - file: pacotes.qmd
+            text: "Pacotes"
+          - file: importando_dados.qmd
+            text: "Importando Dados"
+      - text: "Gráficos em R Studio"
+        file: visualizando_dados.qmd
+        icon: graph-down
+      - text: "Análises Estatísticas"
+        icon: bar-chart
+        menu:
+          - file: analise_estatistica.qmd
+      - text: "Elaborando Mapas"
+        file: mapas.qmd
+        icon: geo-alt
 
     right:
-      - icon: github
-        href: "https://github.com/igosarmento"
-      - icon: search
-
+      - text: "Igo Sarmento"
+        icon: github
+        href: https://github.com/igosarmento
+     
+  
 format:
   html:
-    theme: cosmo
+    theme:
+      light: minty
+      dark: darkly
     css: styles.css
-    toc: false
-    include-after-body:
-      - text: |
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    include-in-header:
-      - text: |
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    toc: true
+    code-tools: true
+    code-fold: true
+    code-line-numbers: true
+    warning: false
+    message: false
+    echo: true
+
+metadata:
+  author: "Igo Sarmento da Silva"
+
+editor: visual

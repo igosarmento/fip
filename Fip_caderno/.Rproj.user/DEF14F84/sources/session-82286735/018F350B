@@ -3,9 +3,9 @@
     "path": "~/GitHub/fip/Fip_caderno/analise_estatistica.qmd",
     "project_path": "analise_estatistica.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "2626467921",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1752114722813.0,
     "source_on_save": false,
     "relative_order": 7,
@@ -19,14 +19,14 @@
         "rmdVisualCollapsedChunks": "",
         "cursorPosition": "2182,0",
         "scrollLine": "39",
-        "rmdVisualModeLocation": "76399:105191.203125"
+        "rmdVisualModeLocation": "76462:105191.203125"
     },
     "folds": "",
-    "lastKnownWriteTime": 1752115902,
+    "lastKnownWriteTime": 1752119214,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1752118092522,
+    "last_content_update": 1752119215438,
     "read_only": false,
     "read_only_alternatives": []
 }

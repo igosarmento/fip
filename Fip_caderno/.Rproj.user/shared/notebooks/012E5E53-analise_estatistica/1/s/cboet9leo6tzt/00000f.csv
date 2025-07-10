@@ -1,4 +1,0 @@
-"0","library(readxl)"
-"0","micelial <- read_excel(""dados-diversos.xlsx"", ""micelial"")"
-"2","Erro: `path` does not exist: ‘dados-diversos.xlsx’
-"

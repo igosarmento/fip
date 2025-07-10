@@ -1,2 +1,0 @@
-"0","# wilcox.test(unaided, aided)             # Wilcoxon pareado"
-"0","# wilcox.test(unaided, aided, paired = FALSE) # Mann-Whitney (independente)"

@@ -32,9 +32,7 @@ Com esse entendimento inicial, damos início à nossa jornada no R, começando p
 
 ## **Baixar R Studio:**
 
-![](R.webp)
-
-Link para instalação do [R e do R Studio](https://posit.co/download/rstudio-desktop/).
+## Link para instalação do [R e do R Studio](https://posit.co/download/rstudio-desktop/).
 
 ## **Objetos e funções:**
 

@@ -1,6 +1,7 @@
 ---
 title: "mapas"
 ---
+
 # **Construindo Mapas no R**
 
 ## Exemplo 1: Mapa Ferrugem do Café na Etiópia
@@ -98,18 +99,5 @@ ggplot(BRA) +
 geom_sf(color = "black",
           fill = "white") +
   geom_sf(data = MG, color = "black",
-            fill = "green")
-```
-
-**Bahia:**
-
-```{r}
-BRA <- ne_states(country = "Brazil", 
-                    returnclass = "sf")
-BA <- BRA |> filter(name_en == "Bahia")
-ggplot(BRA) +
-geom_sf(color = "black",
-          fill = "white") +
-  geom_sf(data = BA, color = "black",
             fill = "green")
 ```

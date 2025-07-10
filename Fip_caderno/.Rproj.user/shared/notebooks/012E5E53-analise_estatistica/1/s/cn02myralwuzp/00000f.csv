@@ -1,7 +1,0 @@
-"0","inc <- mofo |>"
-"0","  ggplot(aes(inc))+"
-"0","  geom_histogram(fill = ""#1A8C8C"")"
-"0","#Para o scleródio"
-"0","mofo |>"
-"0","    ggplot(aes(scl))+"
-"0","    geom_histogram(fill = ""#1A8C8C"")"

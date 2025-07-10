@@ -511,7 +511,7 @@ O objetivo é verificar se há diferença significativa entre as médias dos gru
 
 ```{r}
 library(readxl)
-micelial <- read_excel("dados-diversos.xlsx", "micelial")
+micelial <- read_excel("dados.xlsx", "micelial")
 head(micelial)
 ```
 
@@ -681,7 +681,7 @@ Banco de dados utilizado: fungicida-vaso (conjunto de dados do dados diversos). 
 library(tidyverse)
 library(readxl)
 
-fung_vaso <- read_xlsx("dados-diversos.xlsx", sheet = "fungicida_vaso")
+fung_vaso <- read_xlsx("dados.xlsx", sheet = "fungicida_vaso")
 ```
 
 **`factor(dose)`**: converte a variável `dose` em fator (categórica);
@@ -892,7 +892,7 @@ Tabela
 Dados sobre a interação entre tipo de armazenamento e umidade.
 
 ```{r}
-milho <- read_excel("dados-diversos.xlsx", "armazena")
+milho <- read_excel("dados.xlsx", "armazena")
 milho |>
   filter(tempo ==8) |>
   ggplot(aes(factor(tipo), peso_mil,
@@ -915,7 +915,7 @@ summary(m2)
 Testanto tipo de inoculação na incidencia de *Fusarium* sp. em milho
 
 ```{r}
-milho3 <- read_excel("dados-diversos.xlsx", "milho")
+milho3 <- read_excel("dados.xlsx", "milho")
 
 m4 <- aov(yield ~hybrid*method,
           data = milho3)
@@ -986,7 +986,7 @@ Usando o conjunto de dados fungicida_campo
 ```{r}
 library(readxl)
 library(Hmisc)
-fung_campo <- read_xlsx("dados-diversos.xlsx", sheet = "fungicida_campo")
+fung_campo <- read_xlsx("dados.xlsx", sheet = "fungicida_campo")
 ```
 
 #### Gráfico de produção por tratamento
@@ -998,11 +998,14 @@ fung_campo <- read_xlsx("dados-diversos.xlsx", sheet = "fungicida_campo")
 `stat_summary(fun.data = "mean_cl_boot")`: adiciona médias com intervalos de confiança via bootstrap.
 
 ```{r}
+fung_campo <- fung_campo |> 
+  rename(TRAT = ...1)
 fung_campo |> 
   mutate(TRAT = factor(TRAT)) |> 
   ggplot(aes(TRAT, PROD)) +
   geom_jitter(width = 0.2) +
   stat_summary(fun.data = "mean_cl_boot", colour = "red", width = 0.3)
+
 
 ```
 
@@ -1092,7 +1095,7 @@ pwpm(means_fer)
 Exemplo:
 
 ```{r}
-milho <- read_excel("dados-diversos.xlsx", "milho")
+milho <- read_excel("dados.xlsx", "milho")
 ```
 
 #### Visualizando os dados
@@ -1380,7 +1383,7 @@ library(readxl)
 # estande <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit?gid=401662555#gid=401662555") ou:
 
 
-estande <- read_excel("dados-diversos.xlsx", "estande") # Planilha excel
+estande <- read_excel("dados.xlsx", "estande") # Planilha excel
 ```
 
 ### Visualizar distribuição geral com regressão
@@ -1511,7 +1514,7 @@ Anova(mix)
 Quando se usa o modelo misto, considera que todos os experimentos são agrupados, então considera que amostra é aleatória. Para fazer o modelo de regressão em grupo (misto) acrescenta-se na função aestetic o argumento group = exp.
 
 ```{r}
-estande <- read_excel("dados-diversos.xlsx", "estande")
+estande <- read_excel("dados.xlsx", "estande")
 estande |>
   ggplot(aes(trat, nplants, group = exp))+
   geom_point()+
@@ -1854,7 +1857,7 @@ library(ggplot2)
 ### Importando o conjunto de dados
 
 ```{r}
-estande <- read_excel("dados-diversos.xlsx", "estande")
+estande <- read_excel("dados.xlsx", "estande")
 ```
 
 ### Visualização gráfica
@@ -1943,7 +1946,7 @@ O modelo ajustado é armazenado como um objeto do tipo `lm`, que pode ser examin
 #### Importando o conjunto de dados
 
 ```{r}
-mofo <- read_excel("dados-diversos.xlsx", "mofo")
+mofo <- read_excel("dados.xlsx", "mofo")
 ```
 
 #### Visualizando os dados
@@ -2096,7 +2099,7 @@ library(dplyr)
 library(rstatix)
 
 #Importando dados
-survey <- read_excel("dados-diversos.xlsx","survey")
+survey <- read_excel("dados.xlsx","survey")
 ```
 
 A função `tabyl()` cria uma tabela de frequência tabular, mostrando a contagem de ocorrências de diferentes combinações de valores em variáveis categóricas.
@@ -2178,7 +2181,7 @@ table (survey$year, survey$species)
 ```
 
 ```{r}
-curve <- read_excel("dados-diversos.xlsx","curve")
+curve <- read_excel("dados.xlsx","curve")
 
 curve2 <- curve |> 
   group_by(Irrigation, day) |> 

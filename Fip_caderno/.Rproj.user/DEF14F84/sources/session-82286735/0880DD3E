@@ -3,9 +3,9 @@
     "path": "~/GitHub/fip/Fip_caderno/introducao.qmd",
     "project_path": "introducao.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "40602791",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1752113463619.0,
     "source_on_save": false,
     "relative_order": 3,
@@ -23,11 +23,11 @@
         "docOutlineSize": "75"
     },
     "folds": "",
-    "lastKnownWriteTime": 1752115821,
+    "lastKnownWriteTime": 1752119202,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1752118431211,
+    "last_content_update": 1752119202793,
     "read_only": false,
     "read_only_alternatives": []
 }
