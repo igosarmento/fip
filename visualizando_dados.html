@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Igo Sarmento da Silva">
+
+<title>graficos – FIP_606</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">FIP_606</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> <i class="bi bi-id-badge" role="img">
+</i> 
+<span class="menu-text">Sobre</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-básico-do-r" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-book" role="img">
+</i> 
+ <span class="menu-text">Básico do R</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-básico-do-r">    
+        <li>
+    <a class="dropdown-item" href="./introducao.html">
+ <span class="dropdown-text">Introdução</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./pacotes.html">
+ <span class="dropdown-text">Pacotes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./importando_dados.html">
+ <span class="dropdown-text">Importando Dados</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="./visualizando_dados.html" aria-current="page"> <i class="bi bi-graph-down" role="img">
+</i> 
+<span class="menu-text">Gráficos em R Studio</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-análises-estatísticas" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-bar-chart" role="img">
+</i> 
+ <span class="menu-text">Análises Estatísticas</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-análises-estatísticas">    
+        <li>
+    <a class="dropdown-item" href="./analise_estatistica.html">
+ <span class="dropdown-text">analise_estatistica</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./mapas.html"> <i class="bi bi-geo-alt" role="img">
+</i> 
+<span class="menu-text">Elaborando Mapas</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/igosarmento"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">Igo Sarmento</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#visualização-de-dados" id="toc-visualização-de-dados" class="nav-link active" data-scroll-target="#visualização-de-dados"><strong>Visualização de dados</strong></a>
+  <ul class="collapse">
+  <li><a href="#gráficos-em-ggplot" id="toc-gráficos-em-ggplot" class="nav-link" data-scroll-target="#gráficos-em-ggplot"><strong>Gráficos em ggplot</strong></a></li>
+  <li><a href="#exemplo-de-gráficos-no-ggplot2" id="toc-exemplo-de-gráficos-no-ggplot2" class="nav-link" data-scroll-target="#exemplo-de-gráficos-no-ggplot2">Exemplo de gráficos no ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#importação-de-dados" id="toc-importação-de-dados" class="nav-link" data-scroll-target="#importação-de-dados"><strong>Importação de dados</strong></a></li>
+  <li><a href="#construindo-o-gráfico" id="toc-construindo-o-gráfico" class="nav-link" data-scroll-target="#construindo-o-gráfico">Construindo o gráfico</a></li>
+  </ul></li>
+  <li><a href="#exemplos" id="toc-exemplos" class="nav-link" data-scroll-target="#exemplos">Exemplos:</a>
+  <ul class="collapse">
+  <li><a href="#gráficos-de-pontos" id="toc-gráficos-de-pontos" class="nav-link" data-scroll-target="#gráficos-de-pontos">Gráficos de pontos</a></li>
+  <li><a href="#gráficos-de-pontos-geom_jitter" id="toc-gráficos-de-pontos-geom_jitter" class="nav-link" data-scroll-target="#gráficos-de-pontos-geom_jitter">Gráficos de pontos + geom_jitter</a></li>
+  <li><a href="#gráfico-de-barras" id="toc-gráfico-de-barras" class="nav-link" data-scroll-target="#gráfico-de-barras">G<strong>ráfico de barras</strong></a></li>
+  <li><a href="#gráfico-de-linhas" id="toc-gráfico-de-linhas" class="nav-link" data-scroll-target="#gráfico-de-linhas"><strong>Gráfico de linhas</strong>:</a></li>
+  <li><a href="#gráfico-de-boxplot" id="toc-gráfico-de-boxplot" class="nav-link" data-scroll-target="#gráfico-de-boxplot">Gráfico de Boxplot</a></li>
+  <li><a href="#composição-de-gráficos-com-o-pacote-patchwork" id="toc-composição-de-gráficos-com-o-pacote-patchwork" class="nav-link" data-scroll-target="#composição-de-gráficos-com-o-pacote-patchwork"><strong>Composição de gráficos com o pacote <code>Patchwork</code></strong></a></li>
+  <li><a href="#gráficos-com-facet_wrap" id="toc-gráficos-com-facet_wrap" class="nav-link" data-scroll-target="#gráficos-com-facet_wrap">Gráficos com <code>facet_wrap()</code></a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">graficos</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Igo Sarmento da Silva </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>format: html editor: visual —</p>
+<section id="visualização-de-dados" class="level1">
+<h1><strong>Visualização de dados</strong></h1>
+<section id="gráficos-em-ggplot" class="level2">
+<h2 class="anchored" data-anchor-id="gráficos-em-ggplot"><strong>Gráficos em ggplot</strong></h2>
+<p>O <code>ggplot2</code> é o pacote usado para visualização dos dados. Ele pode ser carregado de forma independente <code>(library(ggplot2))</code> ou como parte do conjunto de pacotes do tidyverse.</p>
+<p>A construção de gráficos com o <code>ggplot2</code> segue uma lógica baseada em camadas, que são adicionadas à medida que se confecciona o gráfico, por isso que se usa o sinal de +, porque significa a adição de mais uma camada. A estrutura básica começa com a função <code>ggplot()</code>, que define a estética da distribuição dos dados que serão trabalhados. Em seguida, adiciona-se uma ou mais camadas com funções do tipo <code>geom_()</code>, que especificam o tipo de gráfico desejado, como pontos (<code>geom_point()</code>), linhas (<code>geom_line()</code>), barras (<code>geom_bar()</code>), entre outros.</p>
+<p>Usa-se o pipe (|&gt;) para enfatizar uma sequência de comandos ou ações no chunk e para evitar adicionar o nome do data frame dentro da função <code>ggplot()</code>. O pipe deve ter sempre um espaço antes dele e, geralmente, deve ser seguido por uma nova linha.</p>
+<p><img src="ggplot2.webp" class="img-fluid"></p>
+</section>
+<section id="exemplo-de-gráficos-no-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-de-gráficos-no-ggplot2">Exemplo de gráficos no ggplot2</h2>
+<section id="importação-de-dados" class="level3">
+<h3 class="anchored" data-anchor-id="importação-de-dados"><strong>Importação de dados</strong></h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(gsheet)</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># usou conjunto de dados do Magnésio, planilha online. Usou o gsheet para chamar os dados do link.</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>dat_mg <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit?gid=983033137#gid=983033137"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="construindo-o-gráfico" class="level3">
+<h3 class="anchored" data-anchor-id="construindo-o-gráfico">Construindo o gráfico</h3>
+<p>A primeira função para criar um ggplot é a função ggplot, que define o conjunto de dados a ser utilizado (o data frame onde os dados foram armazenados, ex. magnésio).</p>
+<p>A função <code>ggplot()</code> define o plano com os eixos x e y. Usamos a função aestetic (aes), para descrever como as variáveis são mapeadas (eixos x e y). Para adionar cor usa-se a função color = nome da cor, ou código. Ao incluir esta função dentro da função aes, dizemos ao ggplot que os pontos devem ser mapeados esteticamente utilizando cores para cada variavel.</p>
+</section>
+</section>
+<section id="exemplos" class="level2">
+<h2 class="anchored" data-anchor-id="exemplos">Exemplos:</h2>
+<section id="gráficos-de-pontos" class="level3">
+<h3 class="anchored" data-anchor-id="gráficos-de-pontos">Gráficos de pontos</h3>
+<p>A função <code>geom_point</code> define que a forma geométrica a ser utilizada é baseada em pontos, gerando um gráfico de dispersão. A função <code>alpha</code> trabalha com a tansparência.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a>dat_mg <span class="sc">|&gt;</span> </span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">ggplot</span> (<span class="fu">aes</span>(trat, comp, <span class="at">color =</span> trat))<span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualizando_dados_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A função <code>shape</code> é utilizada para adicionar diferentes formas ou tipos de marcadores para diferenciar as variáveis (exemplo: círculo e triângulo).</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>dat_mg <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(trat, comp, <span class="at">shape =</span> trat, <span class="at">color =</span> trat))<span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualizando_dados_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="gráficos-de-pontos-geom_jitter" class="level3">
+<h3 class="anchored" data-anchor-id="gráficos-de-pontos-geom_jitter">Gráficos de pontos + geom_jitter</h3>
+<p>Frequentemente, em gráficos com muitos dados agrupados, ocorre a sobreposição de pontos, dificultando a visualização individual de cada observação. Para resolver esse problema, pode-se utilizar a função <code>geom_jitter()</code> no <code>ggplot2</code>.</p>
+<p>Essa função desloca ligeiramente os pontos de forma aleatória, permitindo visualizá-los de forma mais clara e separada. Para evitar uma dispersão excessiva dos dados, é possível controlar esse deslocamento por meio do argumento <code>width</code>, que define a largura do espalhamento horizontal. Isso garante que os pontos permaneçam próximos ao seu valor original, mas sem se sobrepor.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>dat_mg <span class="sc">|&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(trat, comp, <span class="at">shape =</span> trat, <span class="at">color =</span> trat))<span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualizando_dados_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="gráfico-de-barras" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-de-barras">G<strong>ráfico de barras</strong></h3>
+<p>Neste exemplo, utilizamos os pacotes <code>ggplot2</code> e <code>dplyr</code> para gerar um gráfico de barras que representa a média da variável <code>comp</code>para cada tratamento (<code>trat</code>) no conjunto de dados <code>dat_mg</code>. Base <code>dat_mg</code> com as colunas <code>trat</code> (tratamentos) e <code>comp</code> (comprimento).</p>
+<p>Primeiro, os dados são agrupados pela variável <code>trat</code> com a função <code>group_by()</code>, e em seguida é calculada a média da variável <code>comp</code> usando <code>summarise()</code>. O argumento <code>na.rm = TRUE</code> garante que valores ausentes (NA) sejam ignorados no cálculo da média.</p>
+<p>Com os dados resumidos, utilizamos a função <code>ggplot()</code> para construir o gráfico. A função <code>geom_bar()</code> com o argumento <code>stat = "identity"</code> indica que os valores do eixo y já foram previamente calculados (não devem ser contados ou somados automaticamente). O preenchimento das barras é definido por <code>fill = trat</code> e as bordas recebem cor preta para destacar as divisões.</p>
+<p>Os rótulos dos eixos são definidos com <code>labs()</code>, e o tema <code>theme_minimal()</code> é aplicado para um visual mais limpo e moderno.</p>
+<p>Este tipo de gráfico é útil para comparar médias entre diferentes grupos, facilitando a interpretação visual de experimentos com tratamentos ou categorias distintas.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># Calcular média por tratamento</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>media_mg <span class="ot">&lt;-</span> dat_mg <span class="sc">|&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">group_by</span>(trat) <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>  <span class="fu">summarise</span>(<span class="at">media_comp =</span> <span class="fu">mean</span>(comp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb5-8"><a href="#cb5-8"></a></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co"># Gráfico de barras</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="fu">ggplot</span>(media_mg, <span class="fu">aes</span>(<span class="at">x =</span> trat, <span class="at">y =</span> media_comp, <span class="at">fill =</span> trat)) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tratamento"</span>, <span class="at">y =</span> <span class="st">"Média de Comprimento"</span>) <span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualizando_dados_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="gráfico-de-linhas" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-de-linhas"><strong>Gráfico de linhas</strong>:</h3>
+<p>Neste trecho de código, é criado um gráfico de linhas e pontos utilizando os dados de média por tratamento (<code>media_mg</code>), previamente calculados.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>media_mg<span class="sc">$</span>trat <span class="ot">&lt;-</span> <span class="fu">factor</span>(media_mg<span class="sc">$</span>trat, <span class="at">levels =</span> <span class="fu">unique</span>(media_mg<span class="sc">$</span>trat))</span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># Criar gráfico de linhas com pontos</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">ggplot</span>(media_mg, <span class="fu">aes</span>(<span class="at">x =</span> trat, <span class="at">y =</span> media_comp, <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"steelblue"</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tratamento"</span>, <span class="at">y =</span> <span class="st">"Comprimento Médio"</span>) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualizando_dados_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>É possível adicionar <strong>título</strong>, <strong>subtítulo</strong>, <strong>rótulos dos eixos</strong>, <strong>legenda explicativa</strong> e <strong>fonte dos dados</strong> usando a função <code>labs()</code>. Esses elementos enriquecem o gráfico, tornando-o mais informativo e interpretável, especialmente em relatórios, artigos e apresentações.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Gráfico de barras com informações adicionais</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">ggplot</span>(media_mg, <span class="fu">aes</span>(<span class="at">x =</span> trat, <span class="at">y =</span> media_comp, <span class="at">fill =</span> trat)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-5"><a href="#cb7-5"></a>    <span class="at">title =</span> <span class="st">"Média de Comprimento por Tratamento"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6"></a>    <span class="at">subtitle =</span> <span class="st">"Visualização comparativa das médias da variável 'comp'"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7"></a>    <span class="at">x =</span> <span class="st">"Tratamento"</span>,</span>
+<span id="cb7-8"><a href="#cb7-8"></a>    <span class="at">y =</span> <span class="st">"Média de Comprimento"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9"></a>    <span class="at">caption =</span> <span class="st">"Fonte: Dados experimentais - dat_mg"</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>  ) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualizando_dados_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="gráfico-de-boxplot" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-de-boxplot">Gráfico de Boxplot</h3>
+<p>Os boxplots são gráficos muito úteis para analisar a distribuição de uma variável numérica, especialmente quando queremos comparar essa distribuição entre diferentes grupos (por exemplo, tratamentos experimentais).</p>
+<p>Esse tipo de gráfico resume visualmente medidas estatísticas importantes, como:</p>
+<ul>
+<li><p>Mediana (linha central da caixa);</p></li>
+<li><p>Quartis (limites superior e inferior da caixa);</p></li>
+<li><p>Valores máximos e mínimos dentro dos limites definidos;</p></li>
+<li><p><em>Outliers</em> (valores discrepantes), que aparecem como pontos fora das “linhas” do boxplot.</p></li>
+</ul>
+<p>No R, utilizamos a função <code>geom_boxplot()</code> dentro do pacote <code>ggplot2</code> para criar esse tipo de visualização. O eixo <code>x</code> deve conter uma variável categórica (como <code>trat</code>), e o eixo <code>y</code> uma variável numérica (como <code>comp</code>).</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="co"># Criar boxplot da variável 'comp' por tratamento</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">ggplot</span>(dat_mg, <span class="fu">aes</span>(<span class="at">x =</span> trat, <span class="at">y =</span> comp, <span class="at">fill =</span> trat)) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.color =</span> <span class="st">"red"</span>, <span class="at">outlier.shape =</span> <span class="dv">21</span>, <span class="at">outlier.fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-7"><a href="#cb8-7"></a>    <span class="at">title =</span> <span class="st">"Distribuição da Variável 'comp' por Tratamento"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="at">subtitle =</span> <span class="st">"Boxplot representando a dispersão e tendência dos dados por grupo"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9"></a>    <span class="at">x =</span> <span class="st">"Tratamento"</span>,</span>
+<span id="cb8-10"><a href="#cb8-10"></a>    <span class="at">y =</span> <span class="st">"Comprimento"</span>,</span>
+<span id="cb8-11"><a href="#cb8-11"></a>    <span class="at">caption =</span> <span class="st">"Fonte: Dados experimentais - dat_mg"</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualizando_dados_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="composição-de-gráficos-com-o-pacote-patchwork" class="level3">
+<h3 class="anchored" data-anchor-id="composição-de-gráficos-com-o-pacote-patchwork"><strong>Composição de gráficos com o pacote <code>Patchwork</code></strong></h3>
+<p>O pacote patchwork permite combinar diferentes gráficos criados com o <code>ggplot2</code> em uma única visualização. Após instalar e carregar o pacote, é necessário atribuir um nome a cada gráfico individual, o que deve ser feito no <em>chunk</em> correspondente a cada um.</p>
+<p>Para isso, escolha um nome representativo e atribua a ele o resultado da análise utilizando o banco de dados, seguido pelo uso do operador <em>pipe</em> (%&gt;%) para continuar a construção do gráfico.</p>
+<p>Depois de definir todos os gráficos separadamente, a combinação é feita utilizando seus nomes e conectando-os com o sinal de adição (+) ou com a barra vertical (|), dependendo da organização desejada (horizontal ou vertical).</p>
+<p>Exemplo de uso do pacote <code>patchwork</code>:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co">#Simulando um conjunto de dados </span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb9-6"><a href="#cb9-6"></a></span>
+<span id="cb9-7"><a href="#cb9-7"></a></span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="co"># Simulando os dados</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a>dados_fitopatologia <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-10"><a href="#cb9-10"></a>  <span class="at">irrigacao =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Gotejamento"</span>, <span class="st">"Aspersão"</span>, <span class="st">"Sulco"</span>), <span class="at">each =</span> <span class="dv">30</span>),</span>
+<span id="cb9-11"><a href="#cb9-11"></a>  <span class="at">umidade =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Alta"</span>, <span class="st">"Moderada"</span>), <span class="at">times =</span> <span class="dv">45</span>),</span>
+<span id="cb9-12"><a href="#cb9-12"></a>  <span class="at">severidade =</span> <span class="fu">c</span>(</span>
+<span id="cb9-13"><a href="#cb9-13"></a>    <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">0.6</span>, <span class="at">sd =</span> <span class="fl">0.1</span>),  <span class="co"># Gotejamento</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a>    <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">0.8</span>, <span class="at">sd =</span> <span class="fl">0.15</span>), <span class="co"># Aspersão</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a>    <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">0.4</span>, <span class="at">sd =</span> <span class="fl">0.1</span>)   <span class="co"># Sulco</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a>  )</span>
+<span id="cb9-17"><a href="#cb9-17"></a>)</span>
+<span id="cb9-18"><a href="#cb9-18"></a></span>
+<span id="cb9-19"><a href="#cb9-19"></a><span class="co"># Gráfico 1: Boxplot</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a>grafico1 <span class="ot">&lt;-</span> dados_fitopatologia <span class="sc">|&gt;</span></span>
+<span id="cb9-21"><a href="#cb9-21"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> irrigacao, <span class="at">y =</span> severidade, <span class="at">fill =</span> irrigacao)) <span class="sc">+</span></span>
+<span id="cb9-22"><a href="#cb9-22"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb9-23"><a href="#cb9-23"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-24"><a href="#cb9-24"></a>    <span class="at">title =</span> <span class="st">"Severidade por tipo de irrigação"</span>,</span>
+<span id="cb9-25"><a href="#cb9-25"></a>    <span class="at">x =</span> <span class="st">"Irrigação"</span>,</span>
+<span id="cb9-26"><a href="#cb9-26"></a>    <span class="at">y =</span> <span class="st">"Severidade"</span></span>
+<span id="cb9-27"><a href="#cb9-27"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-28"><a href="#cb9-28"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb9-29"><a href="#cb9-29"></a>  <span class="fu">theme</span>(</span>
+<span id="cb9-30"><a href="#cb9-30"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">10</span>)),</span>
+<span id="cb9-31"><a href="#cb9-31"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">10</span>)),</span>
+<span id="cb9-32"><a href="#cb9-32"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">10</span>)),</span>
+<span id="cb9-33"><a href="#cb9-33"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">15</span>, <span class="at">r =</span> <span class="dv">15</span>, <span class="at">b =</span> <span class="dv">15</span>, <span class="at">l =</span> <span class="dv">15</span>)</span>
+<span id="cb9-34"><a href="#cb9-34"></a>  )</span>
+<span id="cb9-35"><a href="#cb9-35"></a></span>
+<span id="cb9-36"><a href="#cb9-36"></a><span class="co"># Gráfico 2: Jitter por umidade</span></span>
+<span id="cb9-37"><a href="#cb9-37"></a>grafico2 <span class="ot">&lt;-</span> dados_fitopatologia <span class="sc">|&gt;</span></span>
+<span id="cb9-38"><a href="#cb9-38"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> irrigacao, <span class="at">y =</span> severidade, <span class="at">color =</span> umidade)) <span class="sc">+</span></span>
+<span id="cb9-39"><a href="#cb9-39"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb9-40"><a href="#cb9-40"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-41"><a href="#cb9-41"></a>    <span class="at">title =</span> <span class="st">"Severidade por irrigação e umidade"</span>,</span>
+<span id="cb9-42"><a href="#cb9-42"></a>    <span class="at">x =</span> <span class="st">"Irrigação"</span>,</span>
+<span id="cb9-43"><a href="#cb9-43"></a>    <span class="at">y =</span> <span class="st">"Severidade"</span></span>
+<span id="cb9-44"><a href="#cb9-44"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-45"><a href="#cb9-45"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb9-46"><a href="#cb9-46"></a>  <span class="fu">theme</span>(</span>
+<span id="cb9-47"><a href="#cb9-47"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">10</span>)),</span>
+<span id="cb9-48"><a href="#cb9-48"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">10</span>)),</span>
+<span id="cb9-49"><a href="#cb9-49"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">10</span>)),</span>
+<span id="cb9-50"><a href="#cb9-50"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">15</span>, <span class="at">r =</span> <span class="dv">15</span>, <span class="at">b =</span> <span class="dv">15</span>, <span class="at">l =</span> <span class="dv">15</span>)</span>
+<span id="cb9-51"><a href="#cb9-51"></a>  )</span>
+<span id="cb9-52"><a href="#cb9-52"></a></span>
+<span id="cb9-53"><a href="#cb9-53"></a><span class="co"># Composição com patchwork</span></span>
+<span id="cb9-54"><a href="#cb9-54"></a>(grafico1 <span class="sc">|</span> grafico2) <span class="sc">+</span> </span>
+<span id="cb9-55"><a href="#cb9-55"></a>  <span class="fu">plot_annotation</span>(</span>
+<span id="cb9-56"><a href="#cb9-56"></a>    <span class="at">title =</span> <span class="st">"Análise Fitopatológica: Severidade do Oídio em Tomate"</span>,</span>
+<span id="cb9-57"><a href="#cb9-57"></a>    <span class="at">theme =</span> <span class="fu">theme</span>(</span>
+<span id="cb9-58"><a href="#cb9-58"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>))</span>
+<span id="cb9-59"><a href="#cb9-59"></a>    )</span>
+<span id="cb9-60"><a href="#cb9-60"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualizando_dados_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="gráficos-com-facet_wrap" class="level3">
+<h3 class="anchored" data-anchor-id="gráficos-com-facet_wrap">Gráficos com <code>facet_wrap()</code></h3>
+<p>A função <code>facet_wrap()</code> no <code>ggplot2</code> é usada para <strong>dividir um gráfico em vários painéis</strong> com base em uma variável categórica — ótimo para comparar subgrupos dentro dos dados.</p>
+<p><strong>Exemplo:</strong></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># Simulando os dados</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb10-4"><a href="#cb10-4"></a>dados_fitopatologia <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-5"><a href="#cb10-5"></a>  <span class="at">irrigacao =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Gotejamento"</span>, <span class="st">"Aspersão"</span>, <span class="st">"Sulco"</span>), <span class="at">each =</span> <span class="dv">30</span>),</span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="at">umidade =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Alta"</span>, <span class="st">"Moderada"</span>), <span class="at">times =</span> <span class="dv">45</span>),</span>
+<span id="cb10-7"><a href="#cb10-7"></a>  <span class="at">severidade =</span> <span class="fu">c</span>(</span>
+<span id="cb10-8"><a href="#cb10-8"></a>    <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">0.6</span>, <span class="at">sd =</span> <span class="fl">0.1</span>),</span>
+<span id="cb10-9"><a href="#cb10-9"></a>    <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">0.8</span>, <span class="at">sd =</span> <span class="fl">0.15</span>),</span>
+<span id="cb10-10"><a href="#cb10-10"></a>    <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">0.4</span>, <span class="at">sd =</span> <span class="fl">0.1</span>)</span>
+<span id="cb10-11"><a href="#cb10-11"></a>  )</span>
+<span id="cb10-12"><a href="#cb10-12"></a>)</span>
+<span id="cb10-13"><a href="#cb10-13"></a></span>
+<span id="cb10-14"><a href="#cb10-14"></a><span class="co"># Gráfico com facet_wrap por nível de umidade</span></span>
+<span id="cb10-15"><a href="#cb10-15"></a>grafico_facetado <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados_fitopatologia, <span class="fu">aes</span>(<span class="at">x =</span> irrigacao, <span class="at">y =</span> severidade, <span class="at">fill =</span> irrigacao)) <span class="sc">+</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb10-17"><a href="#cb10-17"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> umidade) <span class="sc">+</span>  <span class="co"># Dividindo os gráficos por nível de umidade</span></span>
+<span id="cb10-18"><a href="#cb10-18"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-19"><a href="#cb10-19"></a>    <span class="at">title =</span> <span class="st">"Severidade da doença por tipo de irrigação e umidade"</span>,</span>
+<span id="cb10-20"><a href="#cb10-20"></a>    <span class="at">x =</span> <span class="st">"Tipo de Irrigação"</span>,</span>
+<span id="cb10-21"><a href="#cb10-21"></a>    <span class="at">y =</span> <span class="st">"Severidade"</span></span>
+<span id="cb10-22"><a href="#cb10-22"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-23"><a href="#cb10-23"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb10-24"><a href="#cb10-24"></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-25"><a href="#cb10-25"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">12</span>)),</span>
+<span id="cb10-26"><a href="#cb10-26"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),  <span class="co"># Título de cada painel (Alta / Moderada)</span></span>
+<span id="cb10-27"><a href="#cb10-27"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">10</span>)),</span>
+<span id="cb10-28"><a href="#cb10-28"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">10</span>))</span>
+<span id="cb10-29"><a href="#cb10-29"></a>  )</span>
+<span id="cb10-30"><a href="#cb10-30"></a></span>
+<span id="cb10-31"><a href="#cb10-31"></a><span class="co"># Mostrar o gráfico</span></span>
+<span id="cb10-32"><a href="#cb10-32"></a>grafico_facetado</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="visualizando_dados_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb11" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="an">title:</span><span class="co"> "graficos"</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="co">---</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a></span>
+<span id="cb11-5"><a href="#cb11-5"></a>format: html editor: visual ---</span>
+<span id="cb11-6"><a href="#cb11-6"></a></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="fu"># **Visualização de dados**</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a></span>
+<span id="cb11-9"><a href="#cb11-9"></a><span class="fu">## **Gráficos em ggplot**</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a></span>
+<span id="cb11-11"><a href="#cb11-11"></a>O <span class="in">`ggplot2`</span> é o pacote usado para visualização dos dados. Ele pode ser carregado de forma independente <span class="in">`(library(ggplot2))`</span> ou como parte do conjunto de pacotes do tidyverse.</span>
+<span id="cb11-12"><a href="#cb11-12"></a></span>
+<span id="cb11-13"><a href="#cb11-13"></a>A construção de gráficos com o <span class="in">`ggplot2`</span> segue uma lógica baseada em camadas, que são adicionadas à medida que se confecciona o gráfico, por isso que se usa o sinal de +, porque significa a adição de mais uma camada. A estrutura básica começa com a função <span class="in">`ggplot()`</span>, que define a estética da distribuição dos dados que serão trabalhados. Em seguida, adiciona-se uma ou mais camadas com funções do tipo <span class="in">`geom_()`</span>, que especificam o tipo de gráfico desejado, como pontos (<span class="in">`geom_point()`</span>), linhas (<span class="in">`geom_line()`</span>), barras (<span class="in">`geom_bar()`</span>), entre outros.</span>
+<span id="cb11-14"><a href="#cb11-14"></a></span>
+<span id="cb11-15"><a href="#cb11-15"></a>Usa-se o pipe (\|<span class="sc">\&gt;</span>) para enfatizar uma sequência de comandos ou ações no chunk e para evitar adicionar o nome do data frame dentro da função <span class="in">`ggplot()`</span>. O pipe deve ter sempre um espaço antes dele e, geralmente, deve ser seguido por uma nova linha.</span>
+<span id="cb11-16"><a href="#cb11-16"></a></span>
+<span id="cb11-17"><a href="#cb11-17"></a><span class="al">![](ggplot2.webp)</span></span>
+<span id="cb11-18"><a href="#cb11-18"></a></span>
+<span id="cb11-19"><a href="#cb11-19"></a><span class="fu">## Exemplo de gráficos no ggplot2</span></span>
+<span id="cb11-20"><a href="#cb11-20"></a></span>
+<span id="cb11-21"><a href="#cb11-21"></a><span class="fu">### **Importação de dados**</span></span>
+<span id="cb11-22"><a href="#cb11-22"></a></span>
+<span id="cb11-25"><a href="#cb11-25"></a><span class="in">```{r}</span></span>
+<span id="cb11-26"><a href="#cb11-26"></a><span class="fu">library</span>(gsheet)</span>
+<span id="cb11-27"><a href="#cb11-27"></a></span>
+<span id="cb11-28"><a href="#cb11-28"></a><span class="co"># usou conjunto de dados do Magnésio, planilha online. Usou o gsheet para chamar os dados do link.</span></span>
+<span id="cb11-29"><a href="#cb11-29"></a>dat_mg <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit?gid=983033137#gid=983033137"</span>)</span>
+<span id="cb11-30"><a href="#cb11-30"></a><span class="in">```</span></span>
+<span id="cb11-31"><a href="#cb11-31"></a></span>
+<span id="cb11-32"><a href="#cb11-32"></a><span class="fu">### Construindo o gráfico</span></span>
+<span id="cb11-33"><a href="#cb11-33"></a></span>
+<span id="cb11-34"><a href="#cb11-34"></a>A primeira função para criar um ggplot é a função ggplot, que define o conjunto de dados a ser utilizado (o data frame onde os dados foram armazenados, ex. magnésio).</span>
+<span id="cb11-35"><a href="#cb11-35"></a></span>
+<span id="cb11-36"><a href="#cb11-36"></a>A função <span class="in">`ggplot()`</span> define o plano com os eixos x e y. Usamos a função aestetic (aes), para descrever como as variáveis são mapeadas (eixos x e y). Para adionar cor usa-se a função color = nome da cor, ou código. Ao incluir esta função dentro da função aes, dizemos ao ggplot que os pontos devem ser mapeados esteticamente utilizando cores para cada variavel.</span>
+<span id="cb11-37"><a href="#cb11-37"></a></span>
+<span id="cb11-38"><a href="#cb11-38"></a><span class="fu">## Exemplos:</span></span>
+<span id="cb11-39"><a href="#cb11-39"></a></span>
+<span id="cb11-40"><a href="#cb11-40"></a><span class="fu">### Gráficos de pontos</span></span>
+<span id="cb11-41"><a href="#cb11-41"></a></span>
+<span id="cb11-42"><a href="#cb11-42"></a>A função <span class="in">`geom_point`</span> define que a forma geométrica a ser utilizada é baseada em pontos, gerando um gráfico de dispersão. A função <span class="in">`alpha`</span> trabalha com a tansparência.</span>
+<span id="cb11-43"><a href="#cb11-43"></a></span>
+<span id="cb11-46"><a href="#cb11-46"></a><span class="in">```{r}</span></span>
+<span id="cb11-47"><a href="#cb11-47"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-48"><a href="#cb11-48"></a></span>
+<span id="cb11-49"><a href="#cb11-49"></a>dat_mg <span class="sc">|&gt;</span> </span>
+<span id="cb11-50"><a href="#cb11-50"></a>  <span class="fu">ggplot</span> (<span class="fu">aes</span>(trat, comp, <span class="at">color =</span> trat))<span class="sc">+</span></span>
+<span id="cb11-51"><a href="#cb11-51"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="dv">1</span>)</span>
+<span id="cb11-52"><a href="#cb11-52"></a><span class="in">```</span></span>
+<span id="cb11-53"><a href="#cb11-53"></a></span>
+<span id="cb11-54"><a href="#cb11-54"></a>A função <span class="in">`shape`</span> é utilizada para adicionar diferentes formas ou tipos de marcadores para diferenciar as variáveis (exemplo: círculo e triângulo).</span>
+<span id="cb11-55"><a href="#cb11-55"></a></span>
+<span id="cb11-58"><a href="#cb11-58"></a><span class="in">```{r}</span></span>
+<span id="cb11-59"><a href="#cb11-59"></a>dat_mg <span class="sc">|&gt;</span></span>
+<span id="cb11-60"><a href="#cb11-60"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(trat, comp, <span class="at">shape =</span> trat, <span class="at">color =</span> trat))<span class="sc">+</span></span>
+<span id="cb11-61"><a href="#cb11-61"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="dv">1</span>)</span>
+<span id="cb11-62"><a href="#cb11-62"></a><span class="in">```</span></span>
+<span id="cb11-63"><a href="#cb11-63"></a></span>
+<span id="cb11-64"><a href="#cb11-64"></a><span class="fu">### Gráficos de pontos + geom_jitter</span></span>
+<span id="cb11-65"><a href="#cb11-65"></a></span>
+<span id="cb11-66"><a href="#cb11-66"></a>Frequentemente, em gráficos com muitos dados agrupados, ocorre a sobreposição de pontos, dificultando a visualização individual de cada observação. Para resolver esse problema, pode-se utilizar a função <span class="in">`geom_jitter()`</span> no <span class="in">`ggplot2`</span>.</span>
+<span id="cb11-67"><a href="#cb11-67"></a></span>
+<span id="cb11-68"><a href="#cb11-68"></a>Essa função desloca ligeiramente os pontos de forma aleatória, permitindo visualizá-los de forma mais clara e separada. Para evitar uma dispersão excessiva dos dados, é possível controlar esse deslocamento por meio do argumento <span class="in">`width`</span>, que define a largura do espalhamento horizontal. Isso garante que os pontos permaneçam próximos ao seu valor original, mas sem se sobrepor.</span>
+<span id="cb11-69"><a href="#cb11-69"></a></span>
+<span id="cb11-72"><a href="#cb11-72"></a><span class="in">```{r}</span></span>
+<span id="cb11-73"><a href="#cb11-73"></a>dat_mg <span class="sc">|&gt;</span></span>
+<span id="cb11-74"><a href="#cb11-74"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(trat, comp, <span class="at">shape =</span> trat, <span class="at">color =</span> trat))<span class="sc">+</span></span>
+<span id="cb11-75"><a href="#cb11-75"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb11-76"><a href="#cb11-76"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>)</span>
+<span id="cb11-77"><a href="#cb11-77"></a><span class="in">```</span></span>
+<span id="cb11-78"><a href="#cb11-78"></a></span>
+<span id="cb11-79"><a href="#cb11-79"></a><span class="fu">### G**ráfico de barras**</span></span>
+<span id="cb11-80"><a href="#cb11-80"></a></span>
+<span id="cb11-81"><a href="#cb11-81"></a>Neste exemplo, utilizamos os pacotes <span class="in">`ggplot2`</span> e <span class="in">`dplyr`</span> para gerar um gráfico de barras que representa a média da variável <span class="in">`comp`</span>para cada tratamento (<span class="in">`trat`</span>) no conjunto de dados <span class="in">`dat_mg`</span>. Base <span class="in">`dat_mg`</span> com as colunas <span class="in">`trat`</span> (tratamentos) e <span class="in">`comp`</span> (comprimento).</span>
+<span id="cb11-82"><a href="#cb11-82"></a></span>
+<span id="cb11-83"><a href="#cb11-83"></a>Primeiro, os dados são agrupados pela variável <span class="in">`trat`</span> com a função <span class="in">`group_by()`</span>, e em seguida é calculada a média da variável <span class="in">`comp`</span> usando <span class="in">`summarise()`</span>. O argumento <span class="in">`na.rm = TRUE`</span> garante que valores ausentes (NA) sejam ignorados no cálculo da média.</span>
+<span id="cb11-84"><a href="#cb11-84"></a></span>
+<span id="cb11-85"><a href="#cb11-85"></a>Com os dados resumidos, utilizamos a função <span class="in">`ggplot()`</span> para construir o gráfico. A função <span class="in">`geom_bar()`</span> com o argumento <span class="in">`stat = "identity"`</span> indica que os valores do eixo y já foram previamente calculados (não devem ser contados ou somados automaticamente). O preenchimento das barras é definido por <span class="in">`fill = trat`</span> e as bordas recebem cor preta para destacar as divisões.</span>
+<span id="cb11-86"><a href="#cb11-86"></a></span>
+<span id="cb11-87"><a href="#cb11-87"></a>Os rótulos dos eixos são definidos com <span class="in">`labs()`</span>, e o tema <span class="in">`theme_minimal()`</span> é aplicado para um visual mais limpo e moderno.</span>
+<span id="cb11-88"><a href="#cb11-88"></a></span>
+<span id="cb11-89"><a href="#cb11-89"></a>Este tipo de gráfico é útil para comparar médias entre diferentes grupos, facilitando a interpretação visual de experimentos com tratamentos ou categorias distintas.</span>
+<span id="cb11-90"><a href="#cb11-90"></a></span>
+<span id="cb11-93"><a href="#cb11-93"></a><span class="in">```{r}</span></span>
+<span id="cb11-94"><a href="#cb11-94"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-95"><a href="#cb11-95"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb11-96"><a href="#cb11-96"></a></span>
+<span id="cb11-97"><a href="#cb11-97"></a><span class="co"># Calcular média por tratamento</span></span>
+<span id="cb11-98"><a href="#cb11-98"></a>media_mg <span class="ot">&lt;-</span> dat_mg <span class="sc">|&gt;</span></span>
+<span id="cb11-99"><a href="#cb11-99"></a>  <span class="fu">group_by</span>(trat) <span class="sc">|&gt;</span></span>
+<span id="cb11-100"><a href="#cb11-100"></a>  <span class="fu">summarise</span>(<span class="at">media_comp =</span> <span class="fu">mean</span>(comp, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb11-101"><a href="#cb11-101"></a></span>
+<span id="cb11-102"><a href="#cb11-102"></a><span class="co"># Gráfico de barras</span></span>
+<span id="cb11-103"><a href="#cb11-103"></a><span class="fu">ggplot</span>(media_mg, <span class="fu">aes</span>(<span class="at">x =</span> trat, <span class="at">y =</span> media_comp, <span class="at">fill =</span> trat)) <span class="sc">+</span></span>
+<span id="cb11-104"><a href="#cb11-104"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb11-105"><a href="#cb11-105"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tratamento"</span>, <span class="at">y =</span> <span class="st">"Média de Comprimento"</span>) <span class="sc">+</span></span>
+<span id="cb11-106"><a href="#cb11-106"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb11-107"><a href="#cb11-107"></a></span>
+<span id="cb11-108"><a href="#cb11-108"></a><span class="in">```</span></span>
+<span id="cb11-109"><a href="#cb11-109"></a></span>
+<span id="cb11-110"><a href="#cb11-110"></a><span class="fu">### **Gráfico de linhas**:</span></span>
+<span id="cb11-111"><a href="#cb11-111"></a></span>
+<span id="cb11-112"><a href="#cb11-112"></a>Neste trecho de código, é criado um gráfico de linhas e pontos utilizando os dados de média por tratamento (<span class="in">`media_mg`</span>), previamente calculados.</span>
+<span id="cb11-113"><a href="#cb11-113"></a></span>
+<span id="cb11-116"><a href="#cb11-116"></a><span class="in">```{r}</span></span>
+<span id="cb11-117"><a href="#cb11-117"></a>media_mg<span class="sc">$</span>trat <span class="ot">&lt;-</span> <span class="fu">factor</span>(media_mg<span class="sc">$</span>trat, <span class="at">levels =</span> <span class="fu">unique</span>(media_mg<span class="sc">$</span>trat))</span>
+<span id="cb11-118"><a href="#cb11-118"></a></span>
+<span id="cb11-119"><a href="#cb11-119"></a><span class="co"># Criar gráfico de linhas com pontos</span></span>
+<span id="cb11-120"><a href="#cb11-120"></a><span class="fu">ggplot</span>(media_mg, <span class="fu">aes</span>(<span class="at">x =</span> trat, <span class="at">y =</span> media_comp, <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb11-121"><a href="#cb11-121"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"steelblue"</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb11-122"><a href="#cb11-122"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb11-123"><a href="#cb11-123"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Tratamento"</span>, <span class="at">y =</span> <span class="st">"Comprimento Médio"</span>) <span class="sc">+</span></span>
+<span id="cb11-124"><a href="#cb11-124"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb11-125"><a href="#cb11-125"></a></span>
+<span id="cb11-126"><a href="#cb11-126"></a></span>
+<span id="cb11-127"><a href="#cb11-127"></a><span class="in">```</span></span>
+<span id="cb11-128"><a href="#cb11-128"></a></span>
+<span id="cb11-129"><a href="#cb11-129"></a>É possível adicionar **título**, **subtítulo**, **rótulos dos eixos**, **legenda explicativa** e **fonte dos dados** usando a função <span class="in">`labs()`</span>. Esses elementos enriquecem o gráfico, tornando-o mais informativo e interpretável, especialmente em relatórios, artigos e apresentações.</span>
+<span id="cb11-130"><a href="#cb11-130"></a></span>
+<span id="cb11-133"><a href="#cb11-133"></a><span class="in">```{r}</span></span>
+<span id="cb11-134"><a href="#cb11-134"></a><span class="co"># Gráfico de barras com informações adicionais</span></span>
+<span id="cb11-135"><a href="#cb11-135"></a><span class="fu">ggplot</span>(media_mg, <span class="fu">aes</span>(<span class="at">x =</span> trat, <span class="at">y =</span> media_comp, <span class="at">fill =</span> trat)) <span class="sc">+</span></span>
+<span id="cb11-136"><a href="#cb11-136"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">width =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb11-137"><a href="#cb11-137"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-138"><a href="#cb11-138"></a>    <span class="at">title =</span> <span class="st">"Média de Comprimento por Tratamento"</span>,</span>
+<span id="cb11-139"><a href="#cb11-139"></a>    <span class="at">subtitle =</span> <span class="st">"Visualização comparativa das médias da variável 'comp'"</span>,</span>
+<span id="cb11-140"><a href="#cb11-140"></a>    <span class="at">x =</span> <span class="st">"Tratamento"</span>,</span>
+<span id="cb11-141"><a href="#cb11-141"></a>    <span class="at">y =</span> <span class="st">"Média de Comprimento"</span>,</span>
+<span id="cb11-142"><a href="#cb11-142"></a>    <span class="at">caption =</span> <span class="st">"Fonte: Dados experimentais - dat_mg"</span></span>
+<span id="cb11-143"><a href="#cb11-143"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-144"><a href="#cb11-144"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb11-145"><a href="#cb11-145"></a><span class="in">```</span></span>
+<span id="cb11-146"><a href="#cb11-146"></a></span>
+<span id="cb11-147"><a href="#cb11-147"></a><span class="fu">### Gráfico de Boxplot</span></span>
+<span id="cb11-148"><a href="#cb11-148"></a></span>
+<span id="cb11-149"><a href="#cb11-149"></a>Os boxplots são gráficos muito úteis para analisar a distribuição de uma variável numérica, especialmente quando queremos comparar essa distribuição entre diferentes grupos (por exemplo, tratamentos experimentais).</span>
+<span id="cb11-150"><a href="#cb11-150"></a></span>
+<span id="cb11-151"><a href="#cb11-151"></a>Esse tipo de gráfico resume visualmente medidas estatísticas importantes, como:</span>
+<span id="cb11-152"><a href="#cb11-152"></a></span>
+<span id="cb11-153"><a href="#cb11-153"></a><span class="ss">-   </span>Mediana (linha central da caixa);</span>
+<span id="cb11-154"><a href="#cb11-154"></a></span>
+<span id="cb11-155"><a href="#cb11-155"></a><span class="ss">-   </span>Quartis (limites superior e inferior da caixa);</span>
+<span id="cb11-156"><a href="#cb11-156"></a></span>
+<span id="cb11-157"><a href="#cb11-157"></a><span class="ss">-   </span>Valores máximos e mínimos dentro dos limites definidos;</span>
+<span id="cb11-158"><a href="#cb11-158"></a></span>
+<span id="cb11-159"><a href="#cb11-159"></a><span class="ss">-   </span>*Outliers* (valores discrepantes), que aparecem como pontos fora das “linhas” do boxplot.</span>
+<span id="cb11-160"><a href="#cb11-160"></a></span>
+<span id="cb11-161"><a href="#cb11-161"></a>No R, utilizamos a função <span class="in">`geom_boxplot()`</span> dentro do pacote <span class="in">`ggplot2`</span> para criar esse tipo de visualização. O eixo <span class="in">`x`</span> deve conter uma variável categórica (como <span class="in">`trat`</span>), e o eixo <span class="in">`y`</span> uma variável numérica (como <span class="in">`comp`</span>).</span>
+<span id="cb11-162"><a href="#cb11-162"></a></span>
+<span id="cb11-165"><a href="#cb11-165"></a><span class="in">```{r}</span></span>
+<span id="cb11-166"><a href="#cb11-166"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-167"><a href="#cb11-167"></a></span>
+<span id="cb11-168"><a href="#cb11-168"></a><span class="co"># Criar boxplot da variável 'comp' por tratamento</span></span>
+<span id="cb11-169"><a href="#cb11-169"></a><span class="fu">ggplot</span>(dat_mg, <span class="fu">aes</span>(<span class="at">x =</span> trat, <span class="at">y =</span> comp, <span class="at">fill =</span> trat)) <span class="sc">+</span></span>
+<span id="cb11-170"><a href="#cb11-170"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.color =</span> <span class="st">"red"</span>, <span class="at">outlier.shape =</span> <span class="dv">21</span>, <span class="at">outlier.fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb11-171"><a href="#cb11-171"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-172"><a href="#cb11-172"></a>    <span class="at">title =</span> <span class="st">"Distribuição da Variável 'comp' por Tratamento"</span>,</span>
+<span id="cb11-173"><a href="#cb11-173"></a>    <span class="at">subtitle =</span> <span class="st">"Boxplot representando a dispersão e tendência dos dados por grupo"</span>,</span>
+<span id="cb11-174"><a href="#cb11-174"></a>    <span class="at">x =</span> <span class="st">"Tratamento"</span>,</span>
+<span id="cb11-175"><a href="#cb11-175"></a>    <span class="at">y =</span> <span class="st">"Comprimento"</span>,</span>
+<span id="cb11-176"><a href="#cb11-176"></a>    <span class="at">caption =</span> <span class="st">"Fonte: Dados experimentais - dat_mg"</span></span>
+<span id="cb11-177"><a href="#cb11-177"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-178"><a href="#cb11-178"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb11-179"><a href="#cb11-179"></a><span class="in">```</span></span>
+<span id="cb11-180"><a href="#cb11-180"></a></span>
+<span id="cb11-181"><a href="#cb11-181"></a><span class="fu">### **Composição de gráficos com o pacote `Patchwork`**</span></span>
+<span id="cb11-182"><a href="#cb11-182"></a></span>
+<span id="cb11-183"><a href="#cb11-183"></a>O pacote patchwork permite combinar diferentes gráficos criados com o <span class="in">`ggplot2`</span> em uma única visualização. Após instalar e carregar o pacote, é necessário atribuir um nome a cada gráfico individual, o que deve ser feito no *chunk* correspondente a cada um.</span>
+<span id="cb11-184"><a href="#cb11-184"></a></span>
+<span id="cb11-185"><a href="#cb11-185"></a>Para isso, escolha um nome representativo e atribua a ele o resultado da análise utilizando o banco de dados, seguido pelo uso do operador *pipe* (%<span class="sc">\&gt;</span>%) para continuar a construção do gráfico.</span>
+<span id="cb11-186"><a href="#cb11-186"></a></span>
+<span id="cb11-187"><a href="#cb11-187"></a>Depois de definir todos os gráficos separadamente, a combinação é feita utilizando seus nomes e conectando-os com o sinal de adição (+) ou com a barra vertical (\|), dependendo da organização desejada (horizontal ou vertical).</span>
+<span id="cb11-188"><a href="#cb11-188"></a></span>
+<span id="cb11-189"><a href="#cb11-189"></a>Exemplo de uso do pacote <span class="in">`patchwork`</span>:</span>
+<span id="cb11-190"><a href="#cb11-190"></a></span>
+<span id="cb11-193"><a href="#cb11-193"></a><span class="in">```{r}</span></span>
+<span id="cb11-194"><a href="#cb11-194"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-195"><a href="#cb11-195"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb11-196"><a href="#cb11-196"></a></span>
+<span id="cb11-197"><a href="#cb11-197"></a><span class="co">#Simulando um conjunto de dados </span></span>
+<span id="cb11-198"><a href="#cb11-198"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb11-199"><a href="#cb11-199"></a></span>
+<span id="cb11-200"><a href="#cb11-200"></a></span>
+<span id="cb11-201"><a href="#cb11-201"></a><span class="co"># Simulando os dados</span></span>
+<span id="cb11-202"><a href="#cb11-202"></a>dados_fitopatologia <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb11-203"><a href="#cb11-203"></a>  <span class="at">irrigacao =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Gotejamento"</span>, <span class="st">"Aspersão"</span>, <span class="st">"Sulco"</span>), <span class="at">each =</span> <span class="dv">30</span>),</span>
+<span id="cb11-204"><a href="#cb11-204"></a>  <span class="at">umidade =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Alta"</span>, <span class="st">"Moderada"</span>), <span class="at">times =</span> <span class="dv">45</span>),</span>
+<span id="cb11-205"><a href="#cb11-205"></a>  <span class="at">severidade =</span> <span class="fu">c</span>(</span>
+<span id="cb11-206"><a href="#cb11-206"></a>    <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">0.6</span>, <span class="at">sd =</span> <span class="fl">0.1</span>),  <span class="co"># Gotejamento</span></span>
+<span id="cb11-207"><a href="#cb11-207"></a>    <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">0.8</span>, <span class="at">sd =</span> <span class="fl">0.15</span>), <span class="co"># Aspersão</span></span>
+<span id="cb11-208"><a href="#cb11-208"></a>    <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">0.4</span>, <span class="at">sd =</span> <span class="fl">0.1</span>)   <span class="co"># Sulco</span></span>
+<span id="cb11-209"><a href="#cb11-209"></a>  )</span>
+<span id="cb11-210"><a href="#cb11-210"></a>)</span>
+<span id="cb11-211"><a href="#cb11-211"></a></span>
+<span id="cb11-212"><a href="#cb11-212"></a><span class="co"># Gráfico 1: Boxplot</span></span>
+<span id="cb11-213"><a href="#cb11-213"></a>grafico1 <span class="ot">&lt;-</span> dados_fitopatologia <span class="sc">|&gt;</span></span>
+<span id="cb11-214"><a href="#cb11-214"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> irrigacao, <span class="at">y =</span> severidade, <span class="at">fill =</span> irrigacao)) <span class="sc">+</span></span>
+<span id="cb11-215"><a href="#cb11-215"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb11-216"><a href="#cb11-216"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-217"><a href="#cb11-217"></a>    <span class="at">title =</span> <span class="st">"Severidade por tipo de irrigação"</span>,</span>
+<span id="cb11-218"><a href="#cb11-218"></a>    <span class="at">x =</span> <span class="st">"Irrigação"</span>,</span>
+<span id="cb11-219"><a href="#cb11-219"></a>    <span class="at">y =</span> <span class="st">"Severidade"</span></span>
+<span id="cb11-220"><a href="#cb11-220"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-221"><a href="#cb11-221"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb11-222"><a href="#cb11-222"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-223"><a href="#cb11-223"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">10</span>)),</span>
+<span id="cb11-224"><a href="#cb11-224"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">10</span>)),</span>
+<span id="cb11-225"><a href="#cb11-225"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">10</span>)),</span>
+<span id="cb11-226"><a href="#cb11-226"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">15</span>, <span class="at">r =</span> <span class="dv">15</span>, <span class="at">b =</span> <span class="dv">15</span>, <span class="at">l =</span> <span class="dv">15</span>)</span>
+<span id="cb11-227"><a href="#cb11-227"></a>  )</span>
+<span id="cb11-228"><a href="#cb11-228"></a></span>
+<span id="cb11-229"><a href="#cb11-229"></a><span class="co"># Gráfico 2: Jitter por umidade</span></span>
+<span id="cb11-230"><a href="#cb11-230"></a>grafico2 <span class="ot">&lt;-</span> dados_fitopatologia <span class="sc">|&gt;</span></span>
+<span id="cb11-231"><a href="#cb11-231"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> irrigacao, <span class="at">y =</span> severidade, <span class="at">color =</span> umidade)) <span class="sc">+</span></span>
+<span id="cb11-232"><a href="#cb11-232"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb11-233"><a href="#cb11-233"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-234"><a href="#cb11-234"></a>    <span class="at">title =</span> <span class="st">"Severidade por irrigação e umidade"</span>,</span>
+<span id="cb11-235"><a href="#cb11-235"></a>    <span class="at">x =</span> <span class="st">"Irrigação"</span>,</span>
+<span id="cb11-236"><a href="#cb11-236"></a>    <span class="at">y =</span> <span class="st">"Severidade"</span></span>
+<span id="cb11-237"><a href="#cb11-237"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-238"><a href="#cb11-238"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb11-239"><a href="#cb11-239"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-240"><a href="#cb11-240"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">10</span>)),</span>
+<span id="cb11-241"><a href="#cb11-241"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">10</span>)),</span>
+<span id="cb11-242"><a href="#cb11-242"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">10</span>)),</span>
+<span id="cb11-243"><a href="#cb11-243"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">15</span>, <span class="at">r =</span> <span class="dv">15</span>, <span class="at">b =</span> <span class="dv">15</span>, <span class="at">l =</span> <span class="dv">15</span>)</span>
+<span id="cb11-244"><a href="#cb11-244"></a>  )</span>
+<span id="cb11-245"><a href="#cb11-245"></a></span>
+<span id="cb11-246"><a href="#cb11-246"></a><span class="co"># Composição com patchwork</span></span>
+<span id="cb11-247"><a href="#cb11-247"></a>(grafico1 <span class="sc">|</span> grafico2) <span class="sc">+</span> </span>
+<span id="cb11-248"><a href="#cb11-248"></a>  <span class="fu">plot_annotation</span>(</span>
+<span id="cb11-249"><a href="#cb11-249"></a>    <span class="at">title =</span> <span class="st">"Análise Fitopatológica: Severidade do Oídio em Tomate"</span>,</span>
+<span id="cb11-250"><a href="#cb11-250"></a>    <span class="at">theme =</span> <span class="fu">theme</span>(</span>
+<span id="cb11-251"><a href="#cb11-251"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">15</span>))</span>
+<span id="cb11-252"><a href="#cb11-252"></a>    )</span>
+<span id="cb11-253"><a href="#cb11-253"></a>  )</span>
+<span id="cb11-254"><a href="#cb11-254"></a></span>
+<span id="cb11-255"><a href="#cb11-255"></a></span>
+<span id="cb11-256"><a href="#cb11-256"></a></span>
+<span id="cb11-257"><a href="#cb11-257"></a><span class="in">```</span></span>
+<span id="cb11-258"><a href="#cb11-258"></a></span>
+<span id="cb11-259"><a href="#cb11-259"></a><span class="fu">### Gráficos com `facet_wrap()`</span></span>
+<span id="cb11-260"><a href="#cb11-260"></a></span>
+<span id="cb11-261"><a href="#cb11-261"></a>A função <span class="in">`facet_wrap()`</span> no <span class="in">`ggplot2`</span> é usada para **dividir um gráfico em vários painéis** com base em uma variável categórica — ótimo para comparar subgrupos dentro dos dados.</span>
+<span id="cb11-262"><a href="#cb11-262"></a></span>
+<span id="cb11-263"><a href="#cb11-263"></a>**Exemplo:**</span>
+<span id="cb11-264"><a href="#cb11-264"></a></span>
+<span id="cb11-267"><a href="#cb11-267"></a><span class="in">```{r}</span></span>
+<span id="cb11-268"><a href="#cb11-268"></a><span class="co"># Simulando os dados</span></span>
+<span id="cb11-269"><a href="#cb11-269"></a></span>
+<span id="cb11-270"><a href="#cb11-270"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb11-271"><a href="#cb11-271"></a>dados_fitopatologia <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb11-272"><a href="#cb11-272"></a>  <span class="at">irrigacao =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Gotejamento"</span>, <span class="st">"Aspersão"</span>, <span class="st">"Sulco"</span>), <span class="at">each =</span> <span class="dv">30</span>),</span>
+<span id="cb11-273"><a href="#cb11-273"></a>  <span class="at">umidade =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Alta"</span>, <span class="st">"Moderada"</span>), <span class="at">times =</span> <span class="dv">45</span>),</span>
+<span id="cb11-274"><a href="#cb11-274"></a>  <span class="at">severidade =</span> <span class="fu">c</span>(</span>
+<span id="cb11-275"><a href="#cb11-275"></a>    <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">0.6</span>, <span class="at">sd =</span> <span class="fl">0.1</span>),</span>
+<span id="cb11-276"><a href="#cb11-276"></a>    <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">0.8</span>, <span class="at">sd =</span> <span class="fl">0.15</span>),</span>
+<span id="cb11-277"><a href="#cb11-277"></a>    <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="fl">0.4</span>, <span class="at">sd =</span> <span class="fl">0.1</span>)</span>
+<span id="cb11-278"><a href="#cb11-278"></a>  )</span>
+<span id="cb11-279"><a href="#cb11-279"></a>)</span>
+<span id="cb11-280"><a href="#cb11-280"></a></span>
+<span id="cb11-281"><a href="#cb11-281"></a><span class="co"># Gráfico com facet_wrap por nível de umidade</span></span>
+<span id="cb11-282"><a href="#cb11-282"></a>grafico_facetado <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados_fitopatologia, <span class="fu">aes</span>(<span class="at">x =</span> irrigacao, <span class="at">y =</span> severidade, <span class="at">fill =</span> irrigacao)) <span class="sc">+</span></span>
+<span id="cb11-283"><a href="#cb11-283"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb11-284"><a href="#cb11-284"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> umidade) <span class="sc">+</span>  <span class="co"># Dividindo os gráficos por nível de umidade</span></span>
+<span id="cb11-285"><a href="#cb11-285"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-286"><a href="#cb11-286"></a>    <span class="at">title =</span> <span class="st">"Severidade da doença por tipo de irrigação e umidade"</span>,</span>
+<span id="cb11-287"><a href="#cb11-287"></a>    <span class="at">x =</span> <span class="st">"Tipo de Irrigação"</span>,</span>
+<span id="cb11-288"><a href="#cb11-288"></a>    <span class="at">y =</span> <span class="st">"Severidade"</span></span>
+<span id="cb11-289"><a href="#cb11-289"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-290"><a href="#cb11-290"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb11-291"><a href="#cb11-291"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-292"><a href="#cb11-292"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">12</span>)),</span>
+<span id="cb11-293"><a href="#cb11-293"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),  <span class="co"># Título de cada painel (Alta / Moderada)</span></span>
+<span id="cb11-294"><a href="#cb11-294"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">10</span>)),</span>
+<span id="cb11-295"><a href="#cb11-295"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">10</span>))</span>
+<span id="cb11-296"><a href="#cb11-296"></a>  )</span>
+<span id="cb11-297"><a href="#cb11-297"></a></span>
+<span id="cb11-298"><a href="#cb11-298"></a><span class="co"># Mostrar o gráfico</span></span>
+<span id="cb11-299"><a href="#cb11-299"></a>grafico_facetado</span>
+<span id="cb11-300"><a href="#cb11-300"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
