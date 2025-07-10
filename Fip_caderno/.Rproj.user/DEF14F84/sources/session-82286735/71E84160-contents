@@ -8,7 +8,7 @@ website:
     background: "#87CEEB"
     primary: "#B0E0E6"
     left:
-      - text: "Início"
+      - text: "Home"
         href: index.qmd
 
     right:
