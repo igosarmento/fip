@@ -1,0 +1,51 @@
+---
+title: "pacotes"
+format: html
+editor: visual
+---
+
+# Pacotes no R
+
+Pacotes em R são conjuntos organizados de funções, dados e documentação, reunidos em uma estrutura padrão bem definida que pode ser baixada e instalada em R. Eles servem para ampliar as capacidades do R, permitindo que usuários realizem tarefas específicas de forma mais eficiente.
+
+Esses pacotes podem ser obtidos de diferentes fontes, sendo as mais conhecidas: CRAN, Bioconductor e o GitHub. **CRAN** – é o repositório oficial do R para pacotes montados por usuários.
+
+Os pacotes necessários para rodar análises no R depende do objetivo do trabalho, mas alguns pacotes são básicos e essenciais para a maioria das análises, como: Tidyverse, dplyr, readxl, ggplot, etc.
+
+## **Instalação de Pacotes**
+
+A instalação pode ser feita através do menu: tools \> install packages, indo em packages \> install e digitando o nome do pacote para baixar ou usando a função instal.packages (nome do pacote) no console. 
+
+install.packages("nome do pacote de interesse")
+
+**Exemplo:** Instalar pacote tidyverse
+
+```{r}
+#install.packages("tidyverse")
+```
+
+# **Carregamento de pacotes**
+
+Antes de iniciar qualquer trabalho no R, os pacotes de interesse precisam ser carregados. Para o carregamento de pacotes, a função utilizada é `library`(nome do pacote).
+
+```{r warning(FALSE)}
+library(tidyverse)
+```
+
+A remoção das mensagens de alerta que são emitidas por alguns pacotes permite a visualização das informações dispostas mais limpas. Durante o carregamento de pacotes, usamos as hashtags (#) seguidas por / warning: false e / message: false para desativar a exibição de avisos (*warnings*) e mensagens durante a execução do código, já que muitos pacotes exibem mensagens e avisos grandes após o carregamento.
+
+## Usando pacotes sem carregar com library()
+
+Pode usar a função `::` para acessar funções de um pacote sem carregá-lo:
+
+```{r}
+# Usar a função ggplot do pacote ggplot2 sem carregar o pacote todo
+ggplot2::ggplot(data = mtcars, aes(x = wt, y = mpg)) + 
+  ggplot2::geom_point()
+```
+
+Para verificar todos os pacotes instalados:
+
+```{r}
+#installed.packages()
+```
