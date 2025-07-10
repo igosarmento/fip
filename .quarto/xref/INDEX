@@ -7,5 +7,17 @@
   },
   "pacotes.qmd": {
     "pacotes.html": "a474c036"
+  },
+  "importando_dados.qmd": {
+    "importando_dados.html": "2f050f04"
+  },
+  "visualizando_dados.qmd": {
+    "visualizando_dados.html": "61ac68b8"
+  },
+  "analise_estatistica.qmd": {
+    "analise_estatistica.html": "5e4d76d6"
+  },
+  "mapas.qmd": {
+    "mapas.html": "61325944"
   }
 }

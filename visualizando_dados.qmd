@@ -2,42 +2,50 @@
 title: "graficos"
 ---
 
-format: html editor: visual ---
-
 # **Visualização de dados**
 
-## **Gráficos em ggplot**
+## Visualização de Dados com ggplot2
 
-O `ggplot2` é o pacote usado para visualização dos dados. Ele pode ser carregado de forma independente `(library(ggplot2))` ou como parte do conjunto de pacotes do tidyverse.
+O pacote **ggplot2** é amplamente utilizado para criar gráficos no R. Ele pode ser carregado sozinho, com `library(ggplot2)`, ou como parte do conjunto **tidyverse**.
 
-A construção de gráficos com o `ggplot2` segue uma lógica baseada em camadas, que são adicionadas à medida que se confecciona o gráfico, por isso que se usa o sinal de +, porque significa a adição de mais uma camada. A estrutura básica começa com a função `ggplot()`, que define a estética da distribuição dos dados que serão trabalhados. Em seguida, adiciona-se uma ou mais camadas com funções do tipo `geom_()`, que especificam o tipo de gráfico desejado, como pontos (`geom_point()`), linhas (`geom_line()`), barras (`geom_bar()`), entre outros.
+A construção dos gráficos no **ggplot2** é feita por camadas, que vão sendo adicionadas progressivamente. Por isso, utiliza-se o símbolo **+**, que representa a adição de uma nova camada ao gráfico.
 
-Usa-se o pipe (\|\>) para enfatizar uma sequência de comandos ou ações no chunk e para evitar adicionar o nome do data frame dentro da função `ggplot()`. O pipe deve ter sempre um espaço antes dele e, geralmente, deve ser seguido por uma nova linha.
+A estrutura básica inicia-se com a função **ggplot()**, onde se define a estética dos dados — ou seja, quais variáveis serão usadas nos eixos, cores, tamanhos, etc. Depois, adicionam-se camadas com funções do tipo **geom\_()**, que determinam o tipo do gráfico, como:
 
-![](ggplot2.webp)
+-    `geom_point()` para gráficos de pontos,
 
-## Exemplo de gráficos no ggplot2
+-    `geom_line()` para gráficos de linha,
 
-### **Importação de dados**
+-    `geom_bar()` para gráficos de barras, entre outros.
 
-```{r warning(FALSE)}
+### Uso do Pipe (\|\>)
+
+O pipe (`|>`) é utilizado para encadear comandos de forma mais legível e organizada. Ele permite aplicar uma sequência de operações sem precisar repetir o nome do objeto várias vezes. Deve ser precedido por um espaço e, geralmente, seguido por uma nova linha para melhor clareza.
+
+### Exemplo Básico de Gráfico com ggplot2
+
+Antes de criar um gráfico, é comum importar os dados para o R. Depois, pode-se usar o pipe para passar o conjunto de dados para a função `ggplot()` e construir o gráfico adicionando camadas conforme necessário.
+
+```{r}
 library(gsheet)
 
 # usou conjunto de dados do Magnésio, planilha online. Usou o gsheet para chamar os dados do link.
 dat_mg <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit?gid=983033137#gid=983033137")
 ```
 
-### Construindo o gráfico
+### Construindo um Gráfico com ggplot2
 
-A primeira função para criar um ggplot é a função ggplot, que define o conjunto de dados a ser utilizado (o data frame onde os dados foram armazenados, ex. magnésio).
+A criação de um gráfico no **ggplot2** começa pela função **ggplot()**, onde se define o conjunto de dados que será utilizado — geralmente um data frame, como por exemplo, um objeto chamado *magnésio*.
 
-A função `ggplot()` define o plano com os eixos x e y. Usamos a função aestetic (aes), para descrever como as variáveis são mapeadas (eixos x e y). Para adionar cor usa-se a função color = nome da cor, ou código. Ao incluir esta função dentro da função aes, dizemos ao ggplot que os pontos devem ser mapeados esteticamente utilizando cores para cada variavel.
+Dentro da função **ggplot()**, usamos a função **aes()** (estética) para mapear as variáveis aos eixos do gráfico, indicando qual variável vai para o eixo x e qual vai para o eixo y. Além disso, podemos definir características visuais, como cor, tamanho e forma dos pontos.
 
-## Exemplos:
+Para colorir elementos do gráfico, utiliza-se o argumento `color`, que pode receber o nome de uma cor ou um código hexadecimal. Quando o argumento `color` é colocado dentro de **aes()**, isso indica que a cor será atribuída de forma dinâmica, de acordo com os valores de uma variável do conjunto de dados.
 
-### Gráficos de pontos
+### Exemplo: Gráfico de Pontos (Dispersão)
 
-A função `geom_point` define que a forma geométrica a ser utilizada é baseada em pontos, gerando um gráfico de dispersão. A função `alpha` trabalha com a tansparência.
+A função **geom_point()** especifica que o gráfico será de pontos, ideal para visualizar a relação entre duas variáveis em um gráfico de dispersão.
+
+Além disso, é possível ajustar a transparência dos pontos usando o argumento **alpha**, que varia de 0 (totalmente transparente) a 1 (totalmente opaco), facilitando a visualização em gráficos com muitos pontos sobrepostos.
 
 ```{r}
 library(ggplot2)
@@ -47,7 +55,9 @@ dat_mg |>
   geom_point(alpha = 1)
 ```
 
-A função `shape` é utilizada para adicionar diferentes formas ou tipos de marcadores para diferenciar as variáveis (exemplo: círculo e triângulo).
+### Usando a Função `shape` no ggplot2
+
+A função **shape** permite modificar a forma dos pontos em um gráfico, atribuindo diferentes símbolos (como círculos, triângulos, quadrados, etc.) para distinguir categorias ou variáveis. Isso ajuda a visualizar melhor as diferenças entre grupos no gráfico.
 
 ```{r}
 dat_mg |>
@@ -55,11 +65,11 @@ dat_mg |>
   geom_point(alpha = 1)
 ```
 
-### Gráficos de pontos + geom_jitter
+### Gráficos de Pontos com `geom_jitter`
 
-Frequentemente, em gráficos com muitos dados agrupados, ocorre a sobreposição de pontos, dificultando a visualização individual de cada observação. Para resolver esse problema, pode-se utilizar a função `geom_jitter()` no `ggplot2`.
+Em gráficos com muitos dados agrupados, é comum que os pontos se sobreponham, dificultando a visualização individual de cada observação. Para solucionar isso, o **ggplot2** oferece a função **geom_jitter()**.
 
-Essa função desloca ligeiramente os pontos de forma aleatória, permitindo visualizá-los de forma mais clara e separada. Para evitar uma dispersão excessiva dos dados, é possível controlar esse deslocamento por meio do argumento `width`, que define a largura do espalhamento horizontal. Isso garante que os pontos permaneçam próximos ao seu valor original, mas sem se sobrepor.
+Essa função adiciona um pequeno deslocamento aleatório aos pontos, espalhando-os ligeiramente para evitar sobreposição. O deslocamento pode ser controlado pelo argumento **width**, que ajusta a largura da dispersão horizontal, garantindo que os pontos fiquem próximos dos valores originais, mas visíveis separadamente.
 
 ```{r}
 dat_mg |>
@@ -68,17 +78,19 @@ dat_mg |>
   geom_jitter(width = 0.2)
 ```
 
-### G**ráfico de barras**
+### Gráfico de Barras com ggplot2 e dplyr
 
-Neste exemplo, utilizamos os pacotes `ggplot2` e `dplyr` para gerar um gráfico de barras que representa a média da variável `comp`para cada tratamento (`trat`) no conjunto de dados `dat_mg`. Base `dat_mg` com as colunas `trat` (tratamentos) e `comp` (comprimento).
+Neste exemplo, usamos os pacotes **ggplot2** e **dplyr** para criar um gráfico de barras que mostra a média da variável **comp** para cada grupo da variável **trat** no conjunto de dados **dat_mg**.
 
-Primeiro, os dados são agrupados pela variável `trat` com a função `group_by()`, e em seguida é calculada a média da variável `comp` usando `summarise()`. O argumento `na.rm = TRUE` garante que valores ausentes (NA) sejam ignorados no cálculo da média.
+Primeiro, os dados são agrupados pela variável **trat** com a função **group_by()** e, em seguida, calcula-se a média de **comp** usando **summarise()**, ignorando valores ausentes (`NA`) com o argumento `na.rm = TRUE`.
 
-Com os dados resumidos, utilizamos a função `ggplot()` para construir o gráfico. A função `geom_bar()` com o argumento `stat = "identity"` indica que os valores do eixo y já foram previamente calculados (não devem ser contados ou somados automaticamente). O preenchimento das barras é definido por `fill = trat` e as bordas recebem cor preta para destacar as divisões.
+Com os dados resumidos, construímos o gráfico com a função **ggplot()**. A camada **geom_bar()**, configurada com `stat = "identity"`, indica que os valores do eixo y já foram calculados previamente e não precisam ser contados ou somados automaticamente.
 
-Os rótulos dos eixos são definidos com `labs()`, e o tema `theme_minimal()` é aplicado para um visual mais limpo e moderno.
+O preenchimento das barras é feito com `fill = trat`, e as bordas são destacadas com cor preta.
 
-Este tipo de gráfico é útil para comparar médias entre diferentes grupos, facilitando a interpretação visual de experimentos com tratamentos ou categorias distintas.
+Os rótulos dos eixos são ajustados com **labs()**, e o tema **theme_minimal()** é aplicado para um visual mais limpo e moderno.
+
+Esse gráfico é ideal para comparar médias entre diferentes grupos ou tratamentos, facilitando a interpretação visual dos resultados.
 
 ```{r}
 library(ggplot2)
@@ -97,9 +109,11 @@ ggplot(media_mg, aes(x = trat, y = media_comp, fill = trat)) +
 
 ```
 
-### **Gráfico de linhas**:
+### Gráfico de Linhas
 
-Neste trecho de código, é criado um gráfico de linhas e pontos utilizando os dados de média por tratamento (`media_mg`), previamente calculados.
+Neste exemplo, é criado um gráfico combinando **linhas e pontos** com base no conjunto de dados **media_mg**, que contém as médias por tratamento previamente calculadas.
+
+O gráfico de linhas é útil para visualizar tendências ou variações entre os tratamentos. As linhas conectam os pontos representando as médias, facilitando a interpretação da progressão ou comparação entre os grupos.
 
 ```{r}
 media_mg$trat <- factor(media_mg$trat, levels = unique(media_mg$trat))
@@ -114,7 +128,11 @@ ggplot(media_mg, aes(x = trat, y = media_comp, group = 1)) +
 
 ```
 
-É possível adicionar **título**, **subtítulo**, **rótulos dos eixos**, **legenda explicativa** e **fonte dos dados** usando a função `labs()`. Esses elementos enriquecem o gráfico, tornando-o mais informativo e interpretável, especialmente em relatórios, artigos e apresentações.
+### Personalizando o Gráfico com `labs()`
+
+A função **labs()** permite adicionar elementos descritivos ao gráfico, como **título, subtítulo, nomes dos eixos, legenda** e **fonte dos dados**. Esses recursos tornam o gráfico mais informativo e facilitam sua interpretação, especialmente em contextos como relatórios, artigos científicos e apresentações.
+
+O uso adequado do `labs()` enriquece a comunicação visual dos resultados, fornecendo contexto e clareza para quem analisa o gráfico.
 
 ```{r}
 # Gráfico de barras com informações adicionais
@@ -132,19 +150,23 @@ ggplot(media_mg, aes(x = trat, y = media_comp, fill = trat)) +
 
 ### Gráfico de Boxplot
 
-Os boxplots são gráficos muito úteis para analisar a distribuição de uma variável numérica, especialmente quando queremos comparar essa distribuição entre diferentes grupos (por exemplo, tratamentos experimentais).
+O **boxplot** é um tipo de gráfico muito utilizado para analisar a **distribuição de uma variável numérica**, especialmente quando se deseja comparar essa distribuição entre diferentes grupos, como tratamentos experimentais.
 
-Esse tipo de gráfico resume visualmente medidas estatísticas importantes, como:
+Esse gráfico resume visualmente informações estatísticas importantes, como:
 
--   Mediana (linha central da caixa);
+-    **Mediana** (linha central da caixa);
 
--   Quartis (limites superior e inferior da caixa);
+-    **Quartis** (limites inferior e superior da caixa);
 
--   Valores máximos e mínimos dentro dos limites definidos;
+-    **Extremos** (valores mínimos e máximos dentro de um intervalo aceitável);
 
--   *Outliers* (valores discrepantes), que aparecem como pontos fora das “linhas” do boxplot.
+-    **Outliers** (valores discrepantes), representados por pontos fora dos limites do boxplot.
 
-No R, utilizamos a função `geom_boxplot()` dentro do pacote `ggplot2` para criar esse tipo de visualização. O eixo `x` deve conter uma variável categórica (como `trat`), e o eixo `y` uma variável numérica (como `comp`).
+No R, utilizamos a função **geom_boxplot()**, do pacote **ggplot2**, para gerar esse tipo de visualização.
+
+A estrutura básica do gráfico exige uma variável **categórica no eixo x** (por exemplo, `trat`) e uma **variável numérica no eixo y** (como `comp`).
+
+Esse tipo de gráfico é ideal para identificar assimetrias, dispersão e possíveis valores atípicos nos dados.
 
 ```{r}
 library(ggplot2)
@@ -162,15 +184,15 @@ ggplot(dat_mg, aes(x = trat, y = comp, fill = trat)) +
   theme_minimal()
 ```
 
-### **Composição de gráficos com o pacote `Patchwork`**
+### Composição de Gráficos com o Pacote **patchwork**
 
-O pacote patchwork permite combinar diferentes gráficos criados com o `ggplot2` em uma única visualização. Após instalar e carregar o pacote, é necessário atribuir um nome a cada gráfico individual, o que deve ser feito no *chunk* correspondente a cada um.
+O pacote **patchwork** permite combinar múltiplos gráficos feitos com o **ggplot2** em uma única visualização, facilitando comparações e apresentando informações de forma integrada.
 
-Para isso, escolha um nome representativo e atribua a ele o resultado da análise utilizando o banco de dados, seguido pelo uso do operador *pipe* (%\>%) para continuar a construção do gráfico.
+Após instalar e carregar o pacote, cada gráfico deve ser criado separadamente e atribuído a um **objeto com nome representativo**. Para isso, utiliza-se o operador **pipe (%\>%)** (ou o novo `|>`, se preferir), que permite dar sequência à construção do gráfico de forma clara e organizada.
 
-Depois de definir todos os gráficos separadamente, a combinação é feita utilizando seus nomes e conectando-os com o sinal de adição (+) ou com a barra vertical (\|), dependendo da organização desejada (horizontal ou vertical).
+Depois de criados, os gráficos podem ser combinados com o operador **+** (para empilhar na vertical) ou **\|** (para posicionar lado a lado), de acordo com a disposição desejada.
 
-Exemplo de uso do pacote `patchwork`:
+Essa ferramenta é especialmente útil em relatórios, painéis comparativos e apresentações visuais mais completas.
 
 ```{r}
 library(ggplot2)
@@ -240,9 +262,9 @@ grafico2 <- dados_fitopatologia |>
 
 ### Gráficos com `facet_wrap()`
 
-A função `facet_wrap()` no `ggplot2` é usada para **dividir um gráfico em vários painéis** com base em uma variável categórica — ótimo para comparar subgrupos dentro dos dados.
+A função **facet_wrap()**, do pacote **ggplot2**, permite dividir um gráfico em **vários painéis** com base nos níveis de uma variável categórica. Cada painel mostra uma parte do conjunto de dados, facilitando a **comparação entre subgrupos**.
 
-**Exemplo:**
+Essa abordagem é útil quando se deseja visualizar o comportamento de uma variável numérica em diferentes categorias, como tratamentos, regiões ou tempos.
 
 ```{r}
 # Simulando os dados
